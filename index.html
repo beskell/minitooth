@@ -16,17 +16,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     
     <style>
+        .swiper-slide picture, 
         .swiper-slide img {
             width: 100%;
             height: auto;
-            max-height: 550px;
+            display: block;
             object-fit: cover;
         }
-        @media (max-width: 768px) {
+        
+        /* En computadoras limita la altura */
+        @media (min-width: 769px) {
             .swiper-slide img {
-                max-height: 350px;
+                max-height: 550px;
             }
         }
+
+        /* En celulares da la altura exacta para imágenes 1:1 */
+        @media (max-width: 768px) {
+            .swiper-slide picture,
+            .swiper-slide img {
+                aspect-ratio: 1 / 1;
+                max-height: none;
+            }
+        }
+
         /* Clase personalizada para aplicar la fuente Lobster */
         .font-lobster {
             font-family: 'Lobster', Georgia, serif;
@@ -62,25 +75,37 @@
         </div>
     </header>
 
-    <!-- 2. CARRUSEL CON TUS IMÁGENES -->
+    <!-- 2. CARRUSEL ADAPTABLE (1:1 EN CELULARES Y PANORÁMICO EN COMPUTADORA) -->
     <section class="w-full bg-black">
         <div class="swiper mainSlider">
             <div class="swiper-wrapper">
-                <!-- Slide 1 (Imagen 1.jpg) -->
+                <!-- Slide 1 -->
                 <div class="swiper-slide">
-                    <img src="1.jpg" alt="Beskell - Alma Retro, Diseño Único">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="1cel.jpg">
+                        <img src="1.jpg" alt="Beskell - Alma Retro, Diseño Único">
+                    </picture>
                 </div>
-                <!-- Slide 2 (Imagen 2.jpg) -->
+                <!-- Slide 2 -->
                 <div class="swiper-slide">
-                    <img src="2.jpg" alt="Beskell - Tres Formatos, Tu Propio Estilo">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="2cel.jpg">
+                        <img src="2.jpg" alt="Beskell - Tres Formatos, Tu Propio Estilo">
+                    </picture>
                 </div>
-                <!-- Slide 3 (Imagen 3.jpg) -->
+                <!-- Slide 3 -->
                 <div class="swiper-slide">
-                    <img src="3.jpg" alt="Beskell - Tu Marca, Tu Estilo, Tu Parlante">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="3cel.jpg">
+                        <img src="3.jpg" alt="Beskell - Tu Marca, Tu Estilo, Tu Parlante">
+                    </picture>
                 </div>
-                <!-- Slide 4 (Imagen 4d.jpg) -->
+                <!-- Slide 4 -->
                 <div class="swiper-slide">
-                    <img src="4.jpg" alt="Beskell - Tu Música, Tu Propio Estilo">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="4cel.jpg">
+                        <img src="4.jpg" alt="Beskell - Tu Música, Tu Propio Estilo">
+                    </picture>
                 </div>
             </div>
             <!-- Controles del Carrusel -->
