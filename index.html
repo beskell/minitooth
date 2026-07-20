@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beskell - Parlantes Miniatura Retro</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Google Fonts: Lobster -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    
+    <style>
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 550px;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            .swiper-slide img {
+                max-height: 350px;
+            }
+        }
+        /* Clase personalizada para aplicar la fuente Lobster */
+        .font-lobster {
+            font-family: 'Lobster', Georgia, serif;
+        }
+    </style>
+</head>
+<body class="bg-[#121212] text-gray-200 font-sans relative">
+
+    <!-- 1. BARRA DE NAVEGACIÓN PRINCIPAL -->
+    <header class="bg-black/95 border-b border-gray-900 sticky top-0 z-50 backdrop-blur-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center gap-4">
+            <!-- Logo Oficial de Beskell (Blanco) -->
+            <a href="#" class="flex items-center shrink-0">
+                <img src="Beskell.jpg" alt="Beskell" class="h-12 md:h-16 object-contain">
+            </a>
+            
+            <!-- Menú (Contacto enlazado a MiTiendaNube) -->
+            <nav class="hidden lg:flex space-x-8 text-sm uppercase tracking-wider font-medium shrink-0">
+                <a href="#" class="text-white border-b-2 border-white pb-1">Inicio</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Personalización</a>
+                <a href="https://beskell.mitiendanube.com/contacto/" target="_blank" class="text-gray-400 hover:text-white transition">Contacto</a>
+            </nav>
+
+            <!-- Texto descriptivo en lugar del carrito -->
+            <div class="text-right max-w-xs hidden sm:block">
+                <p class="text-xs text-white font-medium tracking-wide uppercase leading-tight">
+                    Parlantes Bluetooth miniatura con estética<br> de amplificador y fragancia a madera
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. CARRUSEL CON TUS IMÁGENES -->
+    <section class="w-full bg-black">
+        <div class="swiper mainSlider">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 (Imagen 1.jpg) -->
+                <div class="swiper-slide">
+                    <img src="1.jpg" alt="Beskell - Alma Retro, Diseño Único">
+                </div>
+                <!-- Slide 2 (Imagen 2.jpg) -->
+                <div class="swiper-slide">
+                    <img src="2.jpg" alt="Beskell - Tres Formatos, Tu Propio Estilo">
+                </div>
+                <!-- Slide 3 (Imagen 3.jpg) -->
+                <div class="swiper-slide">
+                    <img src="3.jpg" alt="Beskell - Tu Marca, Tu Estilo, Tu Parlante">
+                </div>
+                <!-- Slide 4 (Imagen 4d.jpg) -->
+                <div class="swiper-slide">
+                    <img src="4.jpg" alt="Beskell - Tu Música, Tu Propio Estilo">
+                </div>
+            </div>
+            <!-- Controles del Carrusel -->
+            <div class="swiper-button-next !text-white opacity-50 hover:opacity-100 transition"></div>
+            <div class="swiper-button-prev !text-white opacity-50 hover:opacity-100 transition"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- 3. SECCIÓN DE DESTACADOS / MODELOS -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <!-- Título con fuente Lobster -->
+            <h2 class="text-4xl md:text-5xl font-lobster text-white mb-4 tracking-wide">Modelos Disponibles</h2>
+            <p class="text-gray-400 max-w-xl mx-auto">Elegí el diseño que mejor vaya con vos y personalizá los detalles a tu gusto.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Modelo Ampli -->
+            <div class="bg-[#1a1a1a] border border-gray-800 rounded-xl overflow-hidden hover:border-gray-700 transition duration-300 flex flex-col">
+                <img src="modelo-ampli.jpg" alt="Modelo Ampli" class="w-full aspect-[4/3] object-cover border-b border-gray-800 rounded-t-xl">
+                <div class="p-6 text-center flex-1 flex flex-col justify-between items-center">
+                    <div class="mb-5">
+                        <h3 class="text-xl font-bold text-white mb-2">MODELO AMPLI</h3>
+                        <p class="text-sm text-gray-400">Estética de amplificador clásico con panel y perillas.</p>
+                    </div>
+                    <!-- Botón "Lo quiero!" -->
+                    <a href="https://beskell.mitiendanube.com/" target="_blank" class="w-40 bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs tracking-wider py-2.5 rounded-lg transition duration-200 text-center">
+                        Lo quiero!
+                    </a>
+                </div>
+            </div>
+
+            <!-- Modelo Caja -->
+            <div class="bg-[#1a1a1a] border border-gray-800 rounded-xl overflow-hidden hover:border-gray-700 transition duration-300 flex flex-col">
+                <img src="modelo-caja.jpg" alt="Modelo Caja" class="w-full aspect-[4/3] object-cover border-b border-gray-800 rounded-t-xl">
+                <div class="p-6 text-center flex-1 flex flex-col justify-between items-center">
+                    <div class="mb-5">
+                        <h3 class="text-xl font-bold text-white mb-2">MODELO CAJA</h3>
+                        <p class="text-sm text-gray-400">Líneas rectas y compacto. Un clásico del rock en tu escritorio.</p>
+                    </div>
+                    <!-- Botón "Lo quiero!" -->
+                    <a href="https://beskell.mitiendanube.com/" target="_blank" class="w-40 bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs tracking-wider py-2.5 rounded-lg transition duration-200 text-center">
+                        Lo quiero!
+                    </a>
+                </div>
+            </div>
+
+            <!-- Modelo Retorno -->
+            <div class="bg-[#1a1a1a] border border-gray-800 rounded-xl overflow-hidden hover:border-gray-700 transition duration-300 flex flex-col">
+                <img src="modelo-retorno.jpg" alt="Modelo Retorno" class="w-full aspect-[4/3] object-cover border-b border-gray-800 rounded-t-xl">
+                <div class="p-6 text-center flex-1 flex flex-col justify-between items-center">
+                    <div class="mb-5">
+                        <h3 class="text-xl font-bold text-white mb-2">MODELO RETORNO</h3>
+                        <p class="text-sm text-gray-400">Formato curvo icónico de escenario.</p>
+                    </div>
+                    <!-- Botón "Lo quiero!" -->
+                    <a href="https://beskell.mitiendanube.com/" target="_blank" class="w-40 bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs tracking-wider py-2.5 rounded-lg transition duration-200 text-center">
+                        Lo quiero!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECCIÓN: POTENCIA, CALIDAD Y ESPECIFICACIONES -->
+    <section class="container mx-auto px-4 py-16 border-t border-gray-900">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Columna Izquierda: Presentación y Accesorios Incluidos -->
+            <div class="space-y-6">
+                <span class="text-amber-500 font-semibold text-xs tracking-widest uppercase">Diseño Ultra Compacto</span>
+                
+                <!-- Título agrandado con fuente Lobster -->
+                <h2 class="text-4xl md:text-5xl font-lobster text-white tracking-wide leading-tight">
+                    Sorprendente potencia y definición en la palma de tu mano
+                </h2>
+                
+                <p class="text-gray-400 text-base leading-relaxed">
+                    No te dejes engañar por su tamaño en miniatura. El parlante Beskell está diseñado para brindar una <strong class="text-gray-200">excelente calidad de sonido y una potencia única para sus dimensiones</strong>. Además, cuenta con un sistema nativo pasivo de fragancia a madera que ambienta tu espacio de trabajo mientras escuchás tu música favorita.
+                </p>
+
+                <!-- Lo que incluye la caja -->
+                <div class="bg-[#1a1a1a] border border-gray-800 rounded-xl p-6 mt-6">
+                    <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                        ¿Qué incluye la caja?
+                    </h3>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <span class="text-amber-500">✓</span> Funda / Bolsa de cuerina
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-amber-500">✓</span> Cable de carga USB Tipo C (Blanco)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-amber-500">✓</span> Cordón para muñeca o transporte
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-amber-500">✓</span> Manual de usuario impreso
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón de descarga de Manual -->
+                <div class="pt-2">
+                    <a href="manual.pdf" download class="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-semibold text-xs uppercase tracking-wider py-3 px-5 rounded-lg transition duration-200 border border-gray-700">
+                        <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Descargar Manual PDF
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Especificaciones Técnicas -->
+            <div class="bg-[#181818] border border-gray-800 rounded-xl p-8 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-500/5 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <h3 class="text-xl font-bold text-white mb-6 pb-3 border-b border-gray-800 flex items-center justify-between">
+                    Ficha Técnica
+                    <span class="text-xs font-normal text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-full">MiniTooth V5.3</span>
+                </h3>
+
+                <div class="space-y-4 text-sm">
+                    <div class="flex justify-between py-2 border-b border-gray-800/50">
+                        <span class="text-gray-400">Dimensiones</span>
+                        <span class="text-white font-medium">4,2 x 4,2 x 4,2 cm</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-gray-800/50">
+                        <span class="text-gray-400">Peso</span>
+                        <span class="text-white font-medium">56 g</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-gray-800/50">
+                        <span class="text-gray-400">Potencia Nominal</span>
+                        <span class="text-white font-medium">2W</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-gray-800/50">
+                        <span class="text-gray-400">Conectividad</span>
+                        <span class="text-white font-medium">Bluetooth V5.3</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-gray-800/50">
+                        <span class="text-gray-400">Relación Señal/Ruido (S/N)</span>
+                        <span class="text-white font-medium">≥ 90 dB</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-gray-800/50">
+                        <span class="text-gray-400">Distorsión Armónica (THD)</span>
+                        <span class="text-white font-medium">&lt; 1%</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-gray-800/50">
+                        <span class="text-gray-400">Batería</span>
+                        <span class="text-white font-medium text-right">
+                            3.7V / 200 mAh <br>
+                            <span class="text-xs text-amber-500 font-normal">(Entre 3 y 4 horas de reproducción continua)</span>
+                        </span>
+                    </div>
+                    <div class="flex justify-between py-2">
+                        <span class="text-gray-400">Funciones Extra</span>
+                        <span class="text-white font-medium">Obturador remoto de cámara</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. PIE DE PÁGINA (Footer con B logo) -->
+    <footer class="bg-black border-t border-gray-900 py-12 mt-12">
+        <div class="container mx-auto px-4 flex flex-col items-center text-center space-y-4">
+            <!-- Monograma B -->
+            <img src="B logo.jpg" alt="B Logo" class="h-16 w-16 object-contain rounded-lg">
+            
+            <p class="text-sm text-gray-500">
+                &copy; 2026 Beskell - Parlantes Bluetooth miniatura con estética de amplificador y fragancia a madera.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 6. BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/541154990258" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 rounded-full shadow-2xl z-50 flex items-center justify-center transition-transform hover:scale-110 duration-200" aria-label="Contacto por WhatsApp">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    <!-- Swiper JS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mainSlider", {
+            loop: true,
+            effect: "fade",
+            fadeEffect: { crossFade: true },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+</html>
