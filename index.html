@@ -37,21 +37,24 @@
 
     <!-- 1. BARRA DE NAVEGACIÓN PRINCIPAL -->
     <header class="bg-black/95 border-b border-gray-900 sticky top-0 z-50 backdrop-blur-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center gap-4">
-            <!-- Logo Oficial de Beskell (Blanco) -->
-            <a href="#" class="flex items-center shrink-0">
-                <img src="Beskell.jpg" alt="Beskell" class="h-12 md:h-16 object-contain">
-            </a>
+        <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
             
-            <!-- Menú (Contacto enlazado a MiTiendaNube) -->
-            <nav class="flex space-x-4 sm:space-x-8 text-xs sm:text-sm uppercase tracking-wider font-medium shrink-0">
-                <a href="#" class="text-white border-b-2 border-white pb-1">Inicio</a>
+            <!-- Logo + Texto descriptivo en Mobile -->
+            <div class="flex items-center justify-between w-full sm:w-auto">
+                <a href="#" class="flex items-center shrink-0 mx-auto sm:mx-0">
+                    <img src="Beskell.jpg" alt="Beskell" class="h-10 sm:h-12 md:h-16 object-contain">
+                </a>
+            </div>
+            
+            <!-- Menú: Abajo del logo en Celular / Al centro en Pantalla Grande -->
+            <nav class="flex space-x-6 sm:space-x-8 text-xs sm:text-sm uppercase tracking-wider font-medium shrink-0 pt-1 sm:pt-0">
+                <a href="#" class="text-white border-b-2 border-white pb-0.5">Inicio</a>
                 <a href="#" class="text-gray-400 hover:text-white transition">Personalización</a>
                 <a href="https://beskell.mitiendanube.com/contacto/" target="_blank" class="text-gray-400 hover:text-white transition">Contacto</a>
             </nav>
 
-            <!-- Texto descriptivo en lugar del carrito -->
-            <div class="text-right max-w-xs hidden sm:block">
+            <!-- Texto descriptivo (Solo visible en tablets y computadoras) -->
+            <div class="text-right max-w-xs hidden md:block">
                 <p class="text-xs text-white font-medium tracking-wide uppercase leading-tight">
                     Parlantes Bluetooth miniatura con estética<br> de amplificador y fragancia a madera
                 </p>
