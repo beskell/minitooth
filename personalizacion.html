@@ -123,7 +123,8 @@
                         </select>
                     </div>
 
-                    <div>
+                    <!-- CONTENEDOR PANEL (SE OCULTA SI NO ES AMPLI) -->
+                    <div id="contenedorPanel">
                         <div class="flex justify-between items-center mb-2">
                             <label for="selectPanel" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
                                 4. Panel
@@ -137,7 +138,8 @@
                         </select>
                     </div>
 
-                    <div>
+                    <!-- CONTENEDOR ESQUINAS (SE OCULTA SI NO ES AMPLI) -->
+                    <div id="contenedorEsquinas">
                         <div class="flex justify-between items-center mb-2">
                             <label for="selectEsquinas" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
                                 5. Esquinas
@@ -152,7 +154,7 @@
 
                     <div>
                         <label for="selectLogo" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                            6. Color de Logo o Texto *
+                            6. Logo o Texto *
                         </label>
                         <select id="selectLogo" name="Color de Logo/Texto" class="w-full bg-[#111111] border border-gray-700 text-white text-sm rounded-lg p-3 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
                             <option value="Blanco" selected>Blanco</option>
@@ -166,7 +168,7 @@
                             <label for="inputTextoLibre" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
                                 Texto o Indicaciones Especiales
                             </label>
-                            <span class="text-[10px] text-amber-500">(Opcional)</span>
+                            <span class="text-[10px] text-amber-500">(Opcional solo para Envío)</span>
                         </div>
                         <p class="text-[11px] text-gray-400 mb-2 leading-relaxed">
                             Si querés un texto específico, escribilo acá. Si querés un logo propio en imagen, envialo por mail a <a href="mailto:beskell.mini@gmail.com" class="text-amber-400 font-semibold underline">beskell.mini@gmail.com</a> indicando tu N° de Pedido.
@@ -180,7 +182,7 @@
                             <label for="inputPedido" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
                                 Nombre y Número de Pedido *
                             </label>
-                            <span class="text-[10px] text-amber-500">(Requerido)</span>
+                            <span class="text-[10px] text-amber-500">(Requerido solo para Envío)</span>
                         </div>
                         <input type="text" id="inputPedido" name="Cliente_Y_Pedido" placeholder="Ej: Juan Pérez / Pedido #1234" class="w-full bg-[#111111] border border-gray-700 text-white text-sm rounded-lg p-3 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition placeholder-gray-600">
                         <p id="msgError" class="hidden text-xs text-red-500 mt-1">Por favor ingresá tu Nombre y N° de Pedido para enviar.</p>
@@ -222,7 +224,7 @@
         </div>
     </footer>
 
-    <!-- LÓGICA INTEGRADORA (ENVÍO SILENCIOSO EN SEGUNDO PLANO) -->
+    <!-- LÓGICA INTEGRADORA -->
     <script>
         const inputPedido = document.getElementById('inputPedido');
         const selectModelo = document.getElementById('selectModelo');
@@ -238,10 +240,10 @@
         const msgError = document.getElementById('msgError');
         const msgExito = document.getElementById('msgExito');
         
+        const contenedorPanel = document.getElementById('contenedorPanel');
+        const contenedorEsquinas = document.getElementById('contenedorEsquinas');
         const vistaPrevia = document.getElementById('vistaPrevia');
         const nombreImagen = document.getElementById('nombreImagen');
-        const labelPanelNote = document.getElementById('labelPanelNote');
-        const labelEsquinasNote = document.getElementById('labelEsquinasNote');
 
         function actualizarConfiguracion() {
             const modelo = selectModelo.value;
@@ -250,29 +252,13 @@
             const logo = selectLogo.value;
             const esquinas = selectEsquinas.value;
 
+            // Ocultar o Mostrar los contenedores visualmente
             if (modelo !== 'Ampli') {
-                selectPanel.disabled = true;
-                selectPanel.classList.add('opacity-40', 'cursor-not-allowed');
-                labelPanelNote.textContent = '(No aplica)';
-                labelPanelNote.classList.remove('text-amber-500');
-                labelPanelNote.classList.add('text-gray-500');
-
-                selectEsquinas.disabled = true;
-                selectEsquinas.classList.add('opacity-40', 'cursor-not-allowed');
-                labelEsquinasNote.textContent = '(No aplica)';
-                labelEsquinasNote.classList.remove('text-amber-500');
-                labelEsquinasNote.classList.add('text-gray-500');
+                contenedorPanel.classList.add('hidden');
+                contenedorEsquinas.classList.add('hidden');
             } else {
-                selectPanel.disabled = false;
-                selectPanel.classList.remove('opacity-40', 'cursor-not-allowed');
-                labelPanelNote.textContent = '(Solo para Ampli)';
-                labelPanelNote.classList.add('text-amber-500');
-                labelPanelNote.classList.remove('text-gray-500');
-
-                selectEsquinas.disabled = false;
-                selectEsquinas.classList.remove('opacity-40', 'cursor-not-allowed');
-                labelEsquinasNote.textContent = '(Solo para Ampli)';
-                labelEsquinasNote.classList.remove('text-gray-500');
+                contenedorPanel.classList.remove('hidden');
+                contenedorEsquinas.classList.remove('hidden');
             }
 
             let nombreArchivoGlobal = '';
