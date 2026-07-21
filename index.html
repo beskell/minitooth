@@ -31,11 +31,11 @@
             }
         }
 
-        /* En celulares da la altura exacta para imágenes 1:1 */
+        /* En celulares ajusta a la proporción exacta 3:4 */
         @media (max-width: 768px) {
             .swiper-slide picture,
             .swiper-slide img {
-                aspect-ratio: 1 / 1;
+                aspect-ratio: 3 / 4;
                 max-height: none;
             }
         }
@@ -75,7 +75,7 @@
         </div>
     </header>
 
-    <!-- 2. CARRUSEL ADAPTABLE (1:1 EN CELULARES Y PANORÁMICO EN COMPUTADORA) -->
+    <!-- 2. CARRUSEL ADAPTABLE -->
     <section class="w-full bg-black">
         <div class="swiper mainSlider">
             <div class="swiper-wrapper">
