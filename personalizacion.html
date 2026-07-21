@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     
     <style>
-        /* Clase personalizada para aplicar la fuente Lobster */
         .font-lobster {
             font-family: 'Lobster', Georgia, serif;
         }
@@ -26,21 +25,18 @@
     <header class="bg-black/95 border-b border-gray-900 sticky top-0 z-50 backdrop-blur-md">
         <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
             
-            <!-- Logo + Texto descriptivo en Mobile -->
             <div class="flex items-center justify-between w-full sm:w-auto">
                 <a href="index.html" class="flex items-center shrink-0 mx-auto sm:mx-0">
                     <img src="Beskell.jpg" alt="Beskell" class="h-10 sm:h-12 md:h-16 object-contain">
                 </a>
             </div>
             
-            <!-- Menú -->
             <nav class="flex space-x-6 sm:space-x-8 text-xs sm:text-sm uppercase tracking-wider font-medium shrink-0 pt-1 sm:pt-0">
                 <a href="index.html" class="text-gray-400 hover:text-white transition">Inicio</a>
                 <a href="personalizacion.html" class="text-white border-b-2 border-white pb-0.5">Personalización</a>
                 <a href="https://beskell.mitiendanube.com/contacto/" target="_blank" class="text-gray-400 hover:text-white transition">Contacto</a>
             </nav>
 
-            <!-- Texto descriptivo (Solo visible en tablets y computadoras) -->
             <div class="text-right max-w-xs hidden md:block">
                 <p class="text-xs text-white font-medium tracking-wide uppercase leading-tight">
                     Parlantes Bluetooth miniatura con estética<br> de amplificador y fragancia a madera
@@ -51,50 +47,43 @@
 
     <!-- 2. SECCIÓN PRINCIPAL DE PERSONALIZACIÓN -->
     <main class="container mx-auto px-4 py-12">
-        <!-- Encabezado de la Sección -->
         <div class="text-center mb-12">
             <h1 class="text-4xl md:text-6xl font-lobster text-white mb-3 tracking-wide">
                 Personalizá tu MiniTooth
             </h1>
-            <p class="text-gray-400 text-base md:text-lg max-w-xl mx-auto">
+            <p class="text-gray-300 text-base md:text-lg max-w-xl mx-auto font-medium">
                 Armá tu parlante Beskell como más te guste
+            </p>
+            <p class="text-gray-400 text-xs md:text-sm max-w-lg mx-auto mt-2 leading-relaxed">
+                Probá todas las combinaciones que quieras antes de comprar o, si ya realizaste tu compra, envianos tu diseño junto con tu nombre o número de pedido para que lo armemos a tu gusto.
             </p>
         </div>
 
-        <!-- Layout Grid: Vista Previa (Izquierda) + Opciones (Derecha) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
             
-            <!-- CONTENEDOR DE VISTA PREVIA (IZQUIERDA) -->
+            <!-- VISTA PREVIA (IZQUIERDA) -->
             <div class="lg:col-span-6 bg-[#1a1a1a] border border-gray-800 rounded-2xl p-4 sm:p-6 sticky top-24 shadow-2xl">
                 <div class="relative w-full aspect-square bg-black/60 rounded-xl overflow-hidden border border-gray-900 flex items-center justify-center">
                     
-                    <!-- Imagen Dinámica -->
                     <img id="vistaPrevia" 
-                         src="Ampli_R_Negra_P_Gris_F_Blanco_L_Blanco.jpg" 
+                         src="Ampli_R_Negra_P_Gris_F_Blanco_L_Blanco_E_Negro.jpg" 
                          alt="Vista previa del parlante" 
                          class="w-full h-full object-cover rounded-xl transition-opacity duration-300"
                          onerror="this.src='opcionNoValida.jpg';">
 
-                    <!-- Badge con la combinación actual -->
                     <div class="absolute bottom-3 left-3 right-3 bg-black/80 backdrop-blur-md border border-gray-800 rounded-lg p-2.5 text-center">
                         <span class="text-[10px] sm:text-xs font-mono text-amber-400 uppercase tracking-wider block truncate" id="nombreImagen">
-                            Ampli_R_Negra_P_Gris_F_Blanco_L_Blanco.jpg
+                            Ampli_R_Negra_P_Gris_F_Blanco_L_Blanco_E_Negro.jpg
                         </span>
                     </div>
                 </div>
             </div>
 
-            <!-- CONTENEDOR DE SELECTORES (DERECHA) -->
+            <!-- SELECTORES (DERECHA) -->
             <div class="lg:col-span-6 bg-[#181818] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
-                
-                <h2 class="text-xl font-bold text-white pb-3 border-b border-gray-800 flex items-center justify-between">
-                    Configurador
-                    <span class="text-xs text-amber-500 font-normal">Personalizado</span>
-                </h2>
 
                 <form id="formConfigurador" class="space-y-5">
                     
-                    <!-- 1. MODELO -->
                     <div>
                         <label for="selectModelo" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
                             1. Modelo *
@@ -106,7 +95,6 @@
                         </select>
                     </div>
 
-                    <!-- 2. REJILLA -->
                     <div>
                         <label for="selectRejilla" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
                             2. Rejilla *
@@ -118,7 +106,6 @@
                         </select>
                     </div>
 
-                    <!-- 3. FILETE -->
                     <div>
                         <label for="selectFilete" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
                             3. Filete *
@@ -130,7 +117,6 @@
                         </select>
                     </div>
 
-                    <!-- 4. PANEL (Solo para Ampli) -->
                     <div>
                         <div class="flex justify-between items-center mb-2">
                             <label for="selectPanel" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
@@ -145,10 +131,22 @@
                         </select>
                     </div>
 
-                    <!-- 5. LOGO O TEXTO -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="selectEsquinas" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
+                                5. Esquinas
+                            </label>
+                            <span id="labelEsquinasNote" class="text-[10px] text-amber-500">(Solo para Ampli)</span>
+                        </div>
+                        <select id="selectEsquinas" class="w-full bg-[#111111] border border-gray-700 text-white text-sm rounded-lg p-3 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
+                            <option value="Negro" selected>Negro</option>
+                            <option value="Dorado">Dorado</option>
+                        </select>
+                    </div>
+
                     <div>
                         <label for="selectLogo" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                            5. Logo o Texto *
+                            6. Logo o Texto *
                         </label>
                         <select id="selectLogo" class="w-full bg-[#111111] border border-gray-700 text-white text-sm rounded-lg p-3 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
                             <option value="Blanco" selected>Blanco</option>
@@ -156,107 +154,190 @@
                         </select>
                     </div>
 
+                    <div class="pt-2 border-t border-gray-800/80">
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="inputPedido" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
+                                Nombre y Número de Pedido *
+                            </label>
+                            <span class="text-[10px] text-amber-500">(Requerido para enviar)</span>
+                        </div>
+                        <input type="text" id="inputPedido" placeholder="Ej: Juan Pérez / Pedido #1234" class="w-full bg-[#111111] border border-gray-700 text-white text-sm rounded-lg p-3 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition placeholder-gray-600">
+                        <p id="msgError" class="hidden text-xs text-red-500 mt-1">Por favor ingresá tu Nombre y N° de Pedido para enviar.</p>
+                    </div>
+
                 </form>
 
-                <!-- Botón de Pedido por WhatsApp con la configuración personalizada -->
+                <!-- Botón de Envío Interno -->
                 <div class="pt-4 border-t border-gray-800">
-                    <a id="btnPedirWhatsApp" 
-                       href="#" 
-                       target="_blank" 
-                       class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs sm:text-sm tracking-wider py-4 px-6 rounded-xl transition duration-200 flex items-center justify-center gap-2 shadow-lg shadow-amber-500/10">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    <button id="btnEnviarEmail" 
+                            type="button"
+                            class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs sm:text-sm tracking-wider py-4 px-6 rounded-xl transition duration-200 flex items-center justify-center gap-2 shadow-lg shadow-amber-500/10 text-center leading-tight cursor-pointer">
+                        <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                         </svg>
-                        Pedir este modelo por WhatsApp
-                    </a>
+                        <span>
+                            ENVIAR PERSONALIZACION<br>
+                            <span id="btnTextSub" class="text-[11px] sm:text-xs font-semibold opacity-90">SOLO SI YA HICISTE TU COMPRA</span>
+                        </span>
+                    </button>
+                    <!-- Mensaje de éxito -->
+                    <p id="msgExito" class="hidden text-xs text-green-400 text-center mt-3 font-semibold">¡Personalización enviada con éxito! Gracias.</p>
                 </div>
 
             </div>
         </div>
     </main>
 
-    <!-- 3. PIE DE PÁGINA (Footer con B logo) -->
+    <!-- 3. PIE DE PÁGINA -->
     <footer class="bg-black border-t border-gray-900 py-12 mt-12">
         <div class="container mx-auto px-4 flex flex-col items-center text-center space-y-4">
-            <!-- Monograma B -->
             <img src="B logo.jpg" alt="B Logo" class="h-16 w-16 object-contain rounded-lg">
-            
             <p class="text-sm text-gray-500">
                 &copy; 2026 Beskell - Parlantes Bluetooth miniatura con estética de amplificador y fragancia a madera.
             </p>
         </div>
     </footer>
 
-    <!-- LÓGICA INTERACTIVA EN JAVASCRIPT -->
+    <!-- LÓGICA CON WEB3FORMS (ENVÍO SILENCIOSO Y RÁPIDO) -->
     <script>
+        const inputPedido = document.getElementById('inputPedido');
         const selectModelo = document.getElementById('selectModelo');
         const selectRejilla = document.getElementById('selectRejilla');
         const selectFilete = document.getElementById('selectFilete');
         const selectPanel = document.getElementById('selectPanel');
+        const selectEsquinas = document.getElementById('selectEsquinas');
         const selectLogo = document.getElementById('selectLogo');
+        const msgError = document.getElementById('msgError');
+        const msgExito = document.getElementById('msgExito');
         
         const vistaPrevia = document.getElementById('vistaPrevia');
         const nombreImagen = document.getElementById('nombreImagen');
-        const btnPedirWhatsApp = document.getElementById('btnPedirWhatsApp');
+        const btnEnviarEmail = document.getElementById('btnEnviarEmail');
+        const btnTextSub = document.getElementById('btnTextSub');
         const labelPanelNote = document.getElementById('labelPanelNote');
+        const labelEsquinasNote = document.getElementById('labelEsquinasNote');
+
+        let nombreArchivoGlobal = '';
 
         function actualizarConfiguracion() {
             const modelo = selectModelo.value;
             const rejilla = selectRejilla.value;
             const filete = selectFilete.value;
             const logo = selectLogo.value;
+            const esquinas = selectEsquinas.value;
 
-            // Manejo del estado del selector 'Panel' según el modelo elegido
             if (modelo !== 'Ampli') {
                 selectPanel.disabled = true;
                 selectPanel.classList.add('opacity-40', 'cursor-not-allowed');
                 labelPanelNote.textContent = '(No aplica)';
                 labelPanelNote.classList.remove('text-amber-500');
                 labelPanelNote.classList.add('text-gray-500');
+
+                selectEsquinas.disabled = true;
+                selectEsquinas.classList.add('opacity-40', 'cursor-not-allowed');
+                labelEsquinasNote.textContent = '(No aplica)';
+                labelEsquinasNote.classList.remove('text-amber-500');
+                labelEsquinasNote.classList.add('text-gray-500');
             } else {
                 selectPanel.disabled = false;
                 selectPanel.classList.remove('opacity-40', 'cursor-not-allowed');
                 labelPanelNote.textContent = '(Solo para Ampli)';
                 labelPanelNote.classList.add('text-amber-500');
                 labelPanelNote.classList.remove('text-gray-500');
-            }
 
-            // Construcción del nombre del archivo según especificación
-            let nombreArchivo = '';
+                selectEsquinas.disabled = false;
+                selectEsquinas.classList.remove('opacity-40', 'cursor-not-allowed');
+                labelEsquinasNote.textContent = '(Solo para Ampli)';
+                labelEsquinasNote.classList.add('text-amber-500');
+                labelEsquinasNote.classList.remove('text-gray-500');
+            }
 
             if (modelo === 'Ampli') {
                 const panel = selectPanel.value;
-                nombreArchivo = `${modelo}_R_${rejilla}_P_${panel}_F_${filete}_L_${logo}.jpg`;
+                nombreArchivoGlobal = `${modelo}_R_${rejilla}_P_${panel}_F_${filete}_L_${logo}_E_${esquinas}.jpg`;
             } else {
-                // Si es Caja o Retorno, no incluye la sección de Panel
-                nombreArchivo = `${modelo}_R_${rejilla}_F_${filete}_L_${logo}.jpg`;
+                nombreArchivoGlobal = `${modelo}_R_${rejilla}_F_${filete}_L_${logo}.jpg`;
             }
 
-            // Actualizar la imagen y el texto del nombre
-            vistaPrevia.src = nombreArchivo;
-            nombreImagen.textContent = nombreArchivo;
-
-            // Generar el enlace dinámico de WhatsApp
-            let mensaje = `Hola! Quisiera encargar un parlante Beskell personalizado:%0A`;
-            mensaje += `- Modelo: ${modelo}%0A`;
-            mensaje += `- Rejilla: ${rejilla}%0A`;
-            mensaje += `- Filete: ${filete}%0A`;
-            if (modelo === 'Ampli') {
-                mensaje += `- Panel: ${selectPanel.value}%0A`;
-            }
-            mensaje += `- Logo/Texto: ${logo}`;
-
-            btnPedirWhatsApp.href = `https://wa.me/541154990258?text=${mensaje}`;
+            vistaPrevia.src = nombreArchivoGlobal;
+            nombreImagen.textContent = nombreArchivoGlobal;
         }
 
-        // Escuchar los cambios en cada select
+        // Envío mediante Web3Forms
+        btnEnviarEmail.addEventListener('click', function(e) {
+            const datosUsuario = inputPedido.value.trim();
+
+            if (!datosUsuario) {
+                msgError.classList.remove('hidden');
+                inputPedido.classList.add('border-red-500');
+                inputPedido.focus();
+                return;
+            } else {
+                msgError.classList.add('hidden');
+                inputPedido.classList.remove('border-red-500');
+            }
+
+            // Cambiar estado del botón
+            btnEnviarEmail.disabled = true;
+            btnTextSub.textContent = "ENVIANDO...";
+
+            // Preparar payload para Web3Forms
+            const formData = new FormData();
+            
+            // Access Key integrada
+            formData.append("access_key", "38544c80-4629-4972-9691-faccd2205629");
+            
+            formData.append("subject", `Nueva Personalización Beskell: ${datosUsuario}`);
+            formData.append("Cliente / Pedido", datosUsuario);
+            formData.append("Modelo", selectModelo.value);
+            formData.append("Rejilla", selectRejilla.value);
+            formData.append("Filete", selectFilete.value);
+            formData.append("Panel", selectModelo.value === 'Ampli' ? selectPanel.value : 'No aplica');
+            formData.append("Esquinas", selectModelo.value === 'Ampli' ? selectEsquinas.value : 'No aplica');
+            formData.append("Logo / Texto", selectLogo.value);
+            formData.append("Código Imagen", nombreArchivoGlobal);
+
+            // Enviar la petición HTTP silenciosa
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    msgExito.classList.remove('hidden');
+                    btnTextSub.textContent = "¡ENVIADO CON ÉXITO!";
+                    setTimeout(() => {
+                        btnEnviarEmail.disabled = false;
+                        btnTextSub.textContent = "SOLO SI YA HICISTE TU COMPRA";
+                    }, 4000);
+                } else {
+                    alert("Error: " + json.message);
+                    btnEnviarEmail.disabled = false;
+                    btnTextSub.textContent = "SOLO SI YA HICISTE TU COMPRA";
+                }
+            })
+            .catch(error => {
+                alert("Hubo un problema al enviar la personalización. Intentá de nuevo.");
+                btnEnviarEmail.disabled = false;
+                btnTextSub.textContent = "SOLO SI YA HICISTE TU COMPRA";
+            });
+        });
+
+        inputPedido.addEventListener('input', function() {
+            if (this.value.trim()) {
+                msgError.classList.add('hidden');
+                this.classList.remove('border-red-500');
+            }
+        });
+
         selectModelo.addEventListener('change', actualizarConfiguracion);
         selectRejilla.addEventListener('change', actualizarConfiguracion);
         selectFilete.addEventListener('change', actualizarConfiguracion);
         selectPanel.addEventListener('change', actualizarConfiguracion);
+        selectEsquinas.addEventListener('change', actualizarConfiguracion);
         selectLogo.addEventListener('change', actualizarConfiguracion);
 
-        // Inicializar la primera carga
         actualizarConfiguracion();
     </script>
 </body>
