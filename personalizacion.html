@@ -82,10 +82,10 @@
             <!-- SELECTORES (DERECHA) -->
             <div class="lg:col-span-6 bg-[#181818] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
 
-                <!-- Formulario directo a FormSubmit -->
-                <form id="formConfigurador" action="https://formsubmit.co/beskell.mini@gmail.com" method="POST" class="space-y-5">
+                <!-- Endpoint AJAX de FormSubmit -->
+                <form id="formConfigurador" action="https://formsubmit.co/ajax/beskell.mini@gmail.com" method="POST" class="space-y-5">
                     
-                    <!-- Configuraciones FormSubmit -->
+                    <!-- Opciones estéticas del correo -->
                     <input type="hidden" name="_subject" value="Nueva Personalización Beskell">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
@@ -202,6 +202,8 @@
                                 <span id="btnTextSub" class="text-[11px] sm:text-xs font-semibold opacity-90">SOLO SI YA HICISTE TU COMPRA</span>
                             </span>
                         </button>
+                        <!-- Mensaje de éxito en la misma pantalla -->
+                        <p id="msgExito" class="hidden text-xs text-green-400 text-center mt-3 font-semibold">¡Personalización enviada con éxito! Muchas gracias.</p>
                     </div>
 
                 </form>
@@ -220,7 +222,7 @@
         </div>
     </footer>
 
-    <!-- LÓGICA DE ACTUALIZACIÓN -->
+    <!-- LÓGICA INTEGRADORA (ENVÍO SILENCIOSO EN SEGUNDO PLANO) -->
     <script>
         const inputPedido = document.getElementById('inputPedido');
         const selectModelo = document.getElementById('selectModelo');
@@ -231,7 +233,10 @@
         const selectLogo = document.getElementById('selectLogo');
         const inputCodigoImagen = document.getElementById('inputCodigoImagen');
         const formConfigurador = document.getElementById('formConfigurador');
+        const btnEnviarEmail = document.getElementById('btnEnviarEmail');
+        const btnTextSub = document.getElementById('btnTextSub');
         const msgError = document.getElementById('msgError');
+        const msgExito = document.getElementById('msgExito');
         
         const vistaPrevia = document.getElementById('vistaPrevia');
         const nombreImagen = document.getElementById('nombreImagen');
@@ -283,20 +288,55 @@
             inputCodigoImagen.value = nombreArchivoGlobal;
         }
 
-        // Validación antes del envío
+        // Envío por AJAX
         formConfigurador.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
             const datosUsuario = inputPedido.value.trim();
 
             if (!datosUsuario) {
-                e.preventDefault();
                 msgError.classList.remove('hidden');
                 inputPedido.classList.add('border-red-500');
                 inputPedido.focus();
-                return false;
+                return;
             } else {
                 msgError.classList.add('hidden');
                 inputPedido.classList.remove('border-red-500');
             }
+
+            btnEnviarEmail.disabled = true;
+            btnTextSub.textContent = "ENVIANDO...";
+
+            const formData = new FormData(formConfigurador);
+
+            fetch(formConfigurador.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success === "true" || data.success === true) {
+                    msgExito.classList.remove('hidden');
+                    btnTextSub.textContent = "¡ENVIADO CON ÉXITO!";
+                    setTimeout(() => {
+                        btnEnviarEmail.disabled = false;
+                        btnTextSub.textContent = "SOLO SI YA HICISTE TU COMPRA";
+                        msgExito.classList.add('hidden');
+                    }, 5000);
+                } else {
+                    alert("Ocurrió un error al enviar. Por favor reintentá.");
+                    btnEnviarEmail.disabled = false;
+                    btnTextSub.textContent = "SOLO SI YA HICISTE TU COMPRA";
+                }
+            })
+            .catch(error => {
+                alert("Hubo un problema al enviar la personalización. Reintentá.");
+                btnEnviarEmail.disabled = false;
+                btnTextSub.textContent = "SOLO SI YA HICISTE TU COMPRA";
+            });
         });
 
         inputPedido.addEventListener('input', function() {
