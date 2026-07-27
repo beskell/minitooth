@@ -25,7 +25,8 @@
     
     <style>
         .swiper-slide picture, 
-        .swiper-slide img {
+        .swiper-slide img,
+        .swiper-slide video {
             width: 100%;
             height: auto;
             display: block;
@@ -34,7 +35,8 @@
         
         /* En computadoras limita la altura */
         @media (min-width: 769px) {
-            .swiper-slide img {
+            .swiper-slide img,
+            .swiper-slide video {
                 max-height: 550px;
             }
         }
@@ -42,7 +44,8 @@
         /* En celulares ajusta a la proporción exacta 3:4 */
         @media (max-width: 768px) {
             .swiper-slide picture,
-            .swiper-slide img {
+            .swiper-slide img,
+            .swiper-slide video {
                 aspect-ratio: 3 / 4;
                 max-height: none;
             }
@@ -106,28 +109,36 @@
     <section class="w-full bg-black">
         <div class="swiper mainSlider">
             <div class="swiper-wrapper">
-                <!-- Slide 1 -->
+                <!-- Slide 1: Video Adaptativo -->
+                <div class="swiper-slide">
+                    <video id="videoSlide1" autoplay muted playsinline class="w-full h-full object-cover">
+                        <source media="(max-width: 768px)" src="beskell_cel.mp4" type="video/mp4">
+                        <source media="(min-width: 769px)" src="beskell_comp.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video HTML5.
+                    </video>
+                </div>
+                <!-- Slide 2: Imagen 1 -->
                 <div class="swiper-slide">
                     <picture>
                         <source media="(max-width: 768px)" srcset="1cel.jpg">
                         <img src="1.jpg" alt="Beskell - Alma Retro, Diseño Único">
                     </picture>
                 </div>
-                <!-- Slide 2 -->
+                <!-- Slide 3: Imagen 2 -->
                 <div class="swiper-slide">
                     <picture>
                         <source media="(max-width: 768px)" srcset="2cel.jpg">
                         <img src="2.jpg" alt="Beskell - Tres Formatos, Tu Propio Estilo">
                     </picture>
                 </div>
-                <!-- Slide 3 -->
+                <!-- Slide 4: Imagen 3 -->
                 <div class="swiper-slide">
                     <picture>
                         <source media="(max-width: 768px)" srcset="3cel.jpg">
                         <img src="3.jpg" alt="Beskell - Tu Marca, Tu Estilo, Tu Parlante">
                     </picture>
                 </div>
-                <!-- Slide 4 -->
+                <!-- Slide 5: Imagen 4 -->
                 <div class="swiper-slide">
                     <picture>
                         <source media="(max-width: 768px)" srcset="4cel.jpg">
@@ -474,7 +485,45 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+            on: {
+                init: function () {
+                    gestionarVideoYSlide(this);
+                },
+                slideChange: function () {
+                    gestionarVideoYSlide(this);
+                }
+            }
         });
+
+        function gestionarVideoYSlide(swiperInstance) {
+            const video = document.getElementById('videoSlide1');
+            if (!video) return;
+
+            // Swiper con loop usa realIndex (0 es el Slide 1 del video)
+            if (swiperInstance.realIndex === 0) {
+                // Detiene el temporizador automático de Swiper mientras corre el video
+                swiperInstance.autoplay.stop();
+                video.currentTime = 0;
+                
+                // Intenta reproducir el video
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        // Si el navegador bloquea la reproducción automática, pasa al siguiente slide a los 5s
+                        swiperInstance.autoplay.start();
+                    });
+                }
+
+                // Evento cuando el video TERMINA su reproducción completa
+                video.onended = function() {
+                    swiperInstance.slideNext(); // Pasa inmediatamente al Slide 2 (1.jpg)
+                    swiperInstance.autoplay.start(); // Reanuda el temporizador para los demás slides
+                };
+            } else {
+                // Si está en las imágenes (slides 2, 3, 4, 5), el autoplay funciona normal cada 5s
+                swiperInstance.autoplay.start();
+            }
+        }
     </script>
 </body>
 </html>
