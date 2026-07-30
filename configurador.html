@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beskell - Configurador de MiniTooth</title>
+  
+  <!-- ETIQUETA DE VERIFICACIÓN DE GOOGLE SEARCH CONSOLE -->
+  <meta name="google-site-verification" content="jfRM5zWb3WKMjJmEe2jDvnHUUqqER4Lmj0KWO8bFsBs" />
+
+  <!-- SEO Básico -->
+  <meta name="description" content="Probá combinaciones en tiempo real para tu parlante Bluetooth Beskell. Elegí modelo, colores, rejilla, panel, esquinas y logo." />
+  <link rel="canonical" href="https://beskell.com.ar/configurador.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Lobster & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1044172888457770');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1044172888457770&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    '#FAF7F2',
+            beige:    '#F0EBE1',
+            sand:     '#E6DFD1',
+            gold:     '#C9A961',
+            goldDark: '#A88748',
+            ink:      '#26262A',
+            graphite: '#26262A',
+            grey:     '#6E6E6E',
+          },
+          fontFamily: {
+            display: ['"Lobster"', 'cursive', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 12px 32px -12px rgba(38,38,42,0.22)',
+            softer: '0 6px 20px -10px rgba(38,38,42,0.14)',
+            dark: '0 20px 40px -20px rgba(0,0,0,0.5)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #FAF7F2; color: #26262A; }
+    
+    h1, h2, h3, .font-display { 
+      font-family: 'Lobster', cursive, Georgia, serif; 
+      letter-spacing: 0.02em; 
+    }
+
+    .paper {
+      background-color: #FAF7F2;
+      background-image:
+        radial-gradient(rgba(139,111,71,0.05) 1px, transparent 1px),
+        radial-gradient(rgba(139,111,71,0.04) 1px, transparent 1px);
+      background-size: 24px 24px, 40px 40px;
+      background-position: 0 0, 12px 12px;
+    }
+
+    .btn-gold {
+      background: linear-gradient(180deg, #D4B36E 0%, #C9A961 60%, #B4934E 100%);
+      color: #26262A;
+      box-shadow: 0 10px 24px -12px rgba(180,147,78,0.65), inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+    .btn-gold:hover { filter: brightness(1.05); }
+
+    .site-header { background-color: rgba(38,38,42,0.95); backdrop-filter: blur(10px); }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+<!-- ============================================================
+     HEADER UNIFICADO
+     ============================================================ -->
+<header class="site-header sticky top-0 z-50 border-b border-white/10 text-white">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    
+    <a href="index.html" class="flex items-center shrink-0">
+      <img src="Beskell.png" alt="Beskell" class="h-10 sm:h-12 object-contain rounded-md">
+    </a>
+
+    <!-- Navegación Escritorio -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-white/85">
+      <a href="index.html#modelos" class="hover:text-gold transition">Modelos</a>
+      <a href="index.html#personalizacion" class="hover:text-gold transition">Personalización</a>
+      <a href="index.html#ficha" class="hover:text-gold transition">Ficha técnica</a>
+      <a href="index.html#mayoristas" class="hover:text-gold transition">Mayoristas</a>
+      <a href="index.html#faq" class="hover:text-gold transition">FAQs</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener"
+         class="btn-gold hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold">
+        Comprar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg border border-white/20 text-white" aria-label="Abrir menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú Móvil -->
+  <div id="mobileMenu" class="hidden md:hidden border-t border-white/10" style="background-color: rgba(38,38,42,0.98);">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3 text-white/90">
+      <a href="index.html#modelos" class="py-1">Modelos</a>
+      <a href="index.html#personalizacion" class="py-1">Personalización</a>
+      <a href="index.html#ficha" class="py-1">Ficha técnica</a>
+      <a href="index.html#mayoristas" class="py-1">Mayoristas</a>
+      <a href="index.html#faq" class="py-1">FAQs</a>
+      <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener" class="btn-gold inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold w-fit">Comprar</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================
+     SECCIÓN PRINCIPAL DEL CONFIGURADOR
+     ============================================================ -->
+<main class="paper flex-1 py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center mb-10 md:mb-14">
+            <span class="text-xs uppercase tracking-widest text-goldDark font-semibold font-sans">Configurador interactivo</span>
+            <h1 class="text-4xl md:text-6xl font-lobster text-ink mt-2 mb-3">
+                Probá combinaciones en tiempo real
+            </h1>
+            <p class="text-goldDark text-base md:text-lg max-w-xl mx-auto font-semibold">
+                Diseñá tu parlante Beskell ideal
+            </p>
+            <p class="text-grey text-xs md:text-sm max-w-xl mx-auto mt-2 leading-relaxed">
+                Visualizá cómo quedan todas las opciones de colores, rejillas, paneles y terminaciones para encontrar tu combinación perfecta.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- VISTA PREVIA (IZQUIERDA) -->
+            <div class="lg:col-span-6 bg-white border border-sand rounded-2xl p-4 sm:p-6 sticky top-24 shadow-softer">
+                <div class="relative w-full aspect-square rounded-xl overflow-hidden border border-sand/80 flex items-center justify-center"
+                     style="background: radial-gradient(circle at 50% 45%, #FAF7F2 0%, #E6DFD1 55%, #BFB49B 100%);">
+                    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 30% 22%, rgba(201,169,97,0.25), transparent 55%);"></div>
+                    
+                    <img id="vistaPrevia" 
+                         src="Ampli_R_Negra_P_Gris_F_Blanco_L_Blanco_E_Negro.jpg" 
+                         alt="Vista previa del parlante" 
+                         class="relative z-10 w-full h-full object-cover rounded-xl transition-opacity duration-300 drop-shadow-md"
+                         onerror="this.src='';">
+                </div>
+            </div>
+
+            <!-- SELECTORES SOLO VISUALIZACIÓN (DERECHA) -->
+            <div class="lg:col-span-6 bg-ink text-white rounded-2xl p-6 sm:p-8 shadow-dark space-y-6">
+
+                <div class="space-y-5">
+                    
+                    <div>
+                        <label for="selectModelo" class="block text-xs font-bold uppercase tracking-wider text-gold mb-2">
+                            1. Modelo *
+                        </label>
+                        <select id="selectModelo" class="w-full bg-[#18181a] border border-white/20 text-white text-sm rounded-xl p-3 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition">
+                            <option value="Ampli" selected>Ampli</option>
+                            <option value="Caja">Caja</option>
+                            <option value="Retorno">Retorno</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="selectRejilla" class="block text-xs font-bold uppercase tracking-wider text-gold mb-2">
+                            2. Rejilla *
+                        </label>
+                        <select id="selectRejilla" class="w-full bg-[#18181a] border border-white/20 text-white text-sm rounded-xl p-3 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition">
+                            <option value="Negra" selected>Negra</option>
+                            <option value="Gris">Gris</option>
+                            <option value="Dorada">Dorada</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="selectFilete" class="block text-xs font-bold uppercase tracking-wider text-gold mb-2">
+                            3. Filete *
+                        </label>
+                        <select id="selectFilete" class="w-full bg-[#18181a] border border-white/20 text-white text-sm rounded-xl p-3 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition">
+                            <option value="Blanco" selected>Blanco</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Dorado">Dorado</option>
+                        </select>
+                    </div>
+
+                    <!-- CONTENEDOR PANEL (SE OCULTA SI NO ES AMPLI) -->
+                    <div id="contenedorPanel">
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="selectPanel" class="block text-xs font-bold uppercase tracking-wider text-gold">
+                                4. Panel
+                            </label>
+                            <span id="labelPanelNote" class="text-[10px] text-gold/80">(Solo para Ampli)</span>
+                        </div>
+                        <select id="selectPanel" class="w-full bg-[#18181a] border border-white/20 text-white text-sm rounded-xl p-3 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition">
+                            <option value="Gris" selected>Gris</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Dorado">Dorado</option>
+                        </select>
+                    </div>
+
+                    <!-- CONTENEDOR ESQUINAS (SE OCULTA SI NO ES AMPLI) -->
+                    <div id="contenedorEsquinas">
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="selectEsquinas" class="block text-xs font-bold uppercase tracking-wider text-gold">
+                                5. Esquinas
+                            </label>
+                            <span id="labelEsquinasNote" class="text-[10px] text-gold/80">(Solo para Ampli)</span>
+                        </div>
+                        <select id="selectEsquinas" class="w-full bg-[#18181a] border border-white/20 text-white text-sm rounded-xl p-3 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition">
+                            <option value="Negro" selected>Negro</option>
+                            <option value="Dorado">Dorado</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="selectLogo" class="block text-xs font-bold uppercase tracking-wider text-gold mb-2">
+                            6. Logo o Texto *
+                        </label>
+                        <select id="selectLogo" class="w-full bg-[#18181a] border border-white/20 text-white text-sm rounded-xl p-3 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition">
+                            <option value="Blanco" selected>Blanco</option>
+                            <option value="Dorado">Dorado</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ============================================================
+     FOOTER UNIFICADO
+     ============================================================ -->
+<footer class="bg-ink text-white/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <img src="Beskell.png" alt="Beskell" class="h-10 w-auto object-contain rounded-md" />
+      <p class="mt-3 text-sm text-white/70 max-w-xs font-sans">
+        Mini parlantes Bluetooth con estética de amplificador, diseñados en Argentina.
+      </p>
+    </div>
+
+    <div class="font-sans">
+      <p class="text-xs uppercase tracking-widest text-gold font-semibold">Explorar</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a href="index.html#modelos" class="hover:text-gold">Modelos</a></li>
+        <li><a href="index.html#personalizacion" class="hover:text-gold">Personalización</a></li>
+        <li><a href="configurador.html" class="hover:text-gold">Configurador</a></li>
+        <li><a href="index.html#ficha" class="hover:text-gold">Ficha técnica</a></li>
+        <li><a href="index.html#mayoristas" class="hover:text-gold">Mayoristas</a></li>
+        <li><a href="index.html#faq" class="hover:text-gold">FAQs</a></li>
+        <li><a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener" class="hover:text-gold">Comprar</a></li>
+      </ul>
+    </div>
+
+    <div class="font-sans">
+      <p class="text-xs uppercase tracking-widest text-gold font-semibold">Tienda online</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li>
+          <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener" class="hover:text-gold font-medium">Tiendanube</a>
+        </li>
+        <li><span class="text-white/70">Envíos a todo el país</span></li>
+        <li><span class="text-white/70">10% OFF por transferencia</span></li>
+        <li>
+          <a href="https://www.mercadolibre.com.ar/parlante-bluetooth-miniatura-beskell-personalizable/up/MLAU4396082202" target="_blank" rel="noopener" class="hover:text-gold">Mercado Libre</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="font-sans">
+      <p class="text-xs uppercase tracking-widest text-gold font-semibold">Seguinos</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li>
+          <a href="https://www.instagram.com/beskell.mini" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://tiktok.com/@beskell.mini" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 6.6a5.9 5.9 0 0 1-3.5-1.2 5.9 5.9 0 0 1-2.3-3.9h-3.4v13.3a3 3 0 1 1-3-3 3 3 0 0 1 .8.1V8.4a6.4 6.4 0 0 0-.8-.1 6.4 6.4 0 1 0 6.4 6.4V9.2a9.3 9.3 0 0 0 5.8 2z"/></svg>
+            TikTok
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/541154990258" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 font-sans">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 text-xs text-center text-white/60">
+      <span>© <span id="year"></span> Beskell. Diseñado y ensamblado en Argentina.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LÓGICA DE INTERACCIÓN DE VISTA PREVIA -->
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú Mobile
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+    menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+
+    // Lógica interactiva de cambio de imagen en vista previa
+    const selectModelo = document.getElementById('selectModelo');
+    const selectRejilla = document.getElementById('selectRejilla');
+    const selectFilete = document.getElementById('selectFilete');
+    const selectPanel = document.getElementById('selectPanel');
+    const selectEsquinas = document.getElementById('selectEsquinas');
+    const selectLogo = document.getElementById('selectLogo');
+    
+    const contenedorPanel = document.getElementById('contenedorPanel');
+    const contenedorEsquinas = document.getElementById('contenedorEsquinas');
+    const vistaPrevia = document.getElementById('vistaPrevia');
+
+    function actualizarConfiguracion() {
+        const modelo = selectModelo.value;
+        const rejilla = selectRejilla.value;
+        const filete = selectFilete.value;
+        const logo = selectLogo.value;
+        const esquinas = selectEsquinas.value;
+
+        if (modelo !== 'Ampli') {
+            contenedorPanel.classList.add('hidden');
+            contenedorEsquinas.classList.add('hidden');
+        } else {
+            contenedorPanel.classList.remove('hidden');
+            contenedorEsquinas.classList.remove('hidden');
+        }
+
+        let nombreArchivoGlobal = '';
+        if (modelo === 'Ampli') {
+            const panel = selectPanel.value;
+            nombreArchivoGlobal = `${modelo}_R_${rejilla}_P_${panel}_F_${filete}_L_${logo}_E_${esquinas}.jpg`;
+        } else {
+            nombreArchivoGlobal = `${modelo}_R_${rejilla}_F_${filete}_L_${logo}.jpg`;
+        }
+
+        vistaPrevia.src = nombreArchivoGlobal;
+    }
+
+    selectModelo.addEventListener('change', actualizarConfiguracion);
+    selectRejilla.addEventListener('change', actualizarConfiguracion);
+    selectFilete.addEventListener('change', actualizarConfiguracion);
+    selectPanel.addEventListener('change', actualizarConfiguracion);
+    selectEsquinas.addEventListener('change', actualizarConfiguracion);
+    selectLogo.addEventListener('change', actualizarConfiguracion);
+
+    actualizarConfiguracion();
+</script>
+
+</body>
+</html>

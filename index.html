@@ -1,529 +1,1052 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beskell - Parlantes Miniatura Retro</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beskell - Parlantes Miniatura Retro</title>
+  
+  <!-- ETIQUETA DE VERIFICACIÓN DE GOOGLE SEARCH CONSOLE -->
+  <meta name="google-site-verification" content="jfRM5zWb3WKMjJmEe2jDvnHUUqqER4Lmj0KWO8bFsBs" />
+
+  <!-- SEO Básico -->
+  <meta name="description" content="Mini parlantes Bluetooth con estética de amplificador retro y fragancia pasiva a madera. Diseñados en Argentina, personalizables al detalle." />
+  <link rel="canonical" href="https://beskell.com.ar/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Lobster & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1044172888457770');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1044172888457770&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    '#FAF7F2',
+            beige:    '#F0EBE1',
+            sand:     '#E6DFD1',
+            gold:     '#C9A961',
+            goldDark: '#A88748',
+            ink:      '#26262A',
+            graphite: '#26262A',
+            grey:     '#6E6E6E',
+          },
+          fontFamily: {
+            display: ['"Lobster"', 'cursive', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 12px 32px -12px rgba(38,38,42,0.22)',
+            softer: '0 6px 20px -10px rgba(38,38,42,0.14)',
+            dark: '0 20px 40px -20px rgba(0,0,0,0.5)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #FAF7F2; color: #26262A; }
     
-    <!-- ETIQUETA DE VERIFICACIÓN DE GOOGLE SEARCH CONSOLE -->
-    <meta name="google-site-verification" content="jfRM5zWb3WKMjJmEe2jDvnHUUqqER4Lmj0KWO8bFsBs" />
+    h1, h2, h3, .font-display { 
+      font-family: 'Lobster', cursive, Georgia, serif; 
+      letter-spacing: 0.02em; 
+    }
 
-    <!-- SEO Básico para mejorar posicionamiento en Google -->
-    <meta name="description" content="Parlantes Bluetooth miniatura con estética de amplificador retro y fragancia pasiva a madera. Personalizá tu parlante único en Beskell.">
-    <link rel="canonical" href="https://beskell.com.ar/">
+    .paper {
+      background-color: #FAF7F2;
+      background-image:
+        radial-gradient(rgba(139,111,71,0.05) 1px, transparent 1px),
+        radial-gradient(rgba(139,111,71,0.04) 1px, transparent 1px);
+      background-size: 24px 24px, 40px 40px;
+      background-position: 0 0, 12px 12px;
+    }
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Google Fonts: Lobster -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    
-    <style>
-        .swiper-slide picture, 
-        .swiper-slide img,
-        .swiper-slide video {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-        
-        /* En computadoras limita la altura */
-        @media (min-width: 769px) {
-            .swiper-slide img,
-            .swiper-slide video {
-                max-height: 550px;
-            }
-        }
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
-        /* En celulares ajusta a la proporción exacta 3:4 */
-        @media (max-width: 768px) {
-            .swiper-slide picture,
-            .swiper-slide img,
-            .swiper-slide video {
-                aspect-ratio: 3 / 4;
-                max-height: none;
-            }
-        }
+    .swatch {
+      width: 22px; height: 22px; border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.15);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.6);
+    }
+    .swatch-white {
+      border: 1px solid #000000 !important;
+    }
 
-        /* Clase personalizada para aplicar la fuente Lobster */
-        .font-lobster {
-            font-family: 'Lobster', Georgia, serif;
-        }
-    </style>
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform .25s ease; }
 
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1044172888457770');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1044172888457770&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+    .btn-gold {
+      background: linear-gradient(180deg, #D4B36E 0%, #C9A961 60%, #B4934E 100%);
+      color: #26262A;
+      box-shadow: 0 10px 24px -12px rgba(180,147,78,0.65), inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+    .btn-gold:hover { filter: brightness(1.05); }
+
+    .card-lift { transition: transform .35s ease, box-shadow .35s ease; }
+    .card-lift:hover { transform: translateY(-4px); box-shadow: 0 22px 40px -20px rgba(38,38,42,0.35); }
+
+    .card-tag {
+      backdrop-filter: blur(6px);
+      background: rgba(38,38,42,0.72);
+      color: #FFFFFF;
+      letter-spacing: 0.12em;
+    }
+
+    .ref-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      border: 1px solid rgba(139,111,71,0.18);
+    }
+    .ref-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .ref-caption { font-size: 12px; color: #6E6E6E; margin-top: 6px; font-style: italic; text-align: center; }
+
+    .site-header { background-color: rgba(38,38,42,0.95); backdrop-filter: blur(10px); }
+
+    .glass-card { background: rgba(255,255,255,0.06); }
+    .faq-card { background: rgba(255,255,255,0.12); }
+  </style>
 </head>
-<body class="bg-[#121212] text-gray-200 font-sans relative">
+<body class="antialiased">
 
-    <!-- 1. BARRA DE NAVEGACIÓN PRINCIPAL -->
-    <header class="bg-black/95 border-b border-gray-900 sticky top-0 z-50 backdrop-blur-md">
-        <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-            
-            <!-- Logo + Texto descriptivo en Mobile -->
-            <div class="flex items-center justify-between w-full sm:w-auto">
-                <a href="index.html" class="flex items-center shrink-0 mx-auto sm:mx-0">
-                    <img src="Beskell.jpg" alt="Beskell" class="h-10 sm:h-12 md:h-16 object-contain">
-                </a>
-            </div>
-            
-            <!-- Menú: FAQs ubicado antes de Contacto -->
-            <nav class="flex space-x-4 sm:space-x-8 text-xs sm:text-sm uppercase tracking-wider font-medium shrink-0 pt-1 sm:pt-0">
-                <a href="index.html" class="text-white border-b-2 border-white pb-0.5">Inicio</a>
-                <a href="personalizacion.html" class="text-gray-400 hover:text-white transition">Personalizá tu parlante</a>
-                <a href="faqs.html" class="text-gray-400 hover:text-white transition">FAQs</a>
-                <a href="contacto.html" class="text-gray-400 hover:text-white transition">Contacto</a>
-            </nav>
-
-            <!-- Texto descriptivo (Solo visible en tablets y computadoras) -->
-            <div class="text-right max-w-xs hidden md:block">
-                <p class="text-xs text-white font-medium tracking-wide uppercase leading-tight">
-                    Parlantes Bluetooth miniatura con estética<br> de amplificador y fragancia a madera
-                </p>
-            </div>
-        </div>
-    </header>
-
-    <!-- 2. CARRUSEL ADAPTABLE -->
-    <section class="w-full bg-black">
-        <div class="swiper mainSlider">
-            <div class="swiper-wrapper">
-                <!-- Slide 1: Video Adaptativo -->
-                <div class="swiper-slide">
-                    <video id="videoSlide1" autoplay muted playsinline class="w-full h-full object-cover">
-                        <source media="(max-width: 768px)" src="beskell_cel.mp4" type="video/mp4">
-                        <source media="(min-width: 769px)" src="beskell_comp.mp4" type="video/mp4">
-                        Tu navegador no soporta la reproducción de video HTML5.
-                    </video>
-                </div>
-                <!-- Slide 2: Imagen 1 -->
-                <div class="swiper-slide">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="1cel.jpg">
-                        <img src="1.jpg" alt="Beskell - Alma Retro, Diseño Único">
-                    </picture>
-                </div>
-                <!-- Slide 3: Imagen 2 -->
-                <div class="swiper-slide">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="2cel.jpg">
-                        <img src="2.jpg" alt="Beskell - Tres Formatos, Tu Propio Estilo">
-                    </picture>
-                </div>
-                <!-- Slide 4: Imagen 3 -->
-                <div class="swiper-slide">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="3cel.jpg">
-                        <img src="3.jpg" alt="Beskell - Tu Marca, Tu Estilo, Tu Parlante">
-                    </picture>
-                </div>
-                <!-- Slide 5: Imagen 4 -->
-                <div class="swiper-slide">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="4cel.jpg">
-                        <img src="4.jpg" alt="Beskell - Tu Música, Tu Propio Estilo">
-                    </picture>
-                </div>
-            </div>
-            <!-- Controles del Carrusel -->
-            <div class="swiper-button-next !text-white opacity-50 hover:opacity-100 transition"></div>
-            <div class="swiper-button-prev !text-white opacity-50 hover:opacity-100 transition"></div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
-    <!-- 3. SECCIÓN DE DESTACADOS / MODELOS -->
-    <section class="container mx-auto px-4 py-16">
-        <div class="text-center mb-12">
-            <!-- Título con fuente Lobster -->
-            <h2 class="text-4xl md:text-5xl font-lobster text-white mb-4 tracking-wide">Modelos Disponibles</h2>
-            <p class="text-gray-400 max-w-xl mx-auto">Elegí el diseño que mejor vaya con vos y personalizá los detalles a tu gusto.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Modelo Ampli -->
-            <div class="bg-[#1a1a1a] border border-gray-800 rounded-xl overflow-hidden hover:border-gray-700 transition duration-300 flex flex-col">
-                <img src="modelo-ampli.jpg" alt="Modelo Ampli" class="w-full aspect-[4/3] object-cover border-b border-gray-800 rounded-t-xl">
-                <div class="p-6 text-center flex-1 flex flex-col justify-between items-center">
-                    <div class="mb-5">
-                        <h3 class="text-xl font-bold text-white mb-2">MODELO AMPLI</h3>
-                        <p class="text-sm text-gray-400">Estética de amplificador clásico con panel y perillas.</p>
-                    </div>
-                    <!-- Botón "Lo quiero!" con Pixel Event -->
-                    <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_self" class="w-40 bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs tracking-wider py-2.5 rounded-lg transition duration-200 text-center">
-                        Lo quiero!
-                    </a>
-                </div>
-            </div>
-
-            <!-- Modelo Caja -->
-            <div class="bg-[#1a1a1a] border border-gray-800 rounded-xl overflow-hidden hover:border-gray-700 transition duration-300 flex flex-col">
-                <img src="modelo-caja.jpg" alt="Modelo Caja" class="w-full aspect-[4/3] object-cover border-b border-gray-800 rounded-t-xl">
-                <div class="p-6 text-center flex-1 flex flex-col justify-between items-center">
-                    <div class="mb-5">
-                        <h3 class="text-xl font-bold text-white mb-2">MODELO CAJA</h3>
-                        <p class="text-sm text-gray-400">Líneas rectas y compacto. Un clásico del rock en tu escritorio.</p>
-                    </div>
-                    <!-- Botón "Lo quiero!" con Pixel Event -->
-                    <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_self" class="w-40 bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs tracking-wider py-2.5 rounded-lg transition duration-200 text-center">
-                        Lo quiero!
-                    </a>
-                </div>
-            </div>
-
-            <!-- Modelo Retorno -->
-            <div class="bg-[#1a1a1a] border border-gray-800 rounded-xl overflow-hidden hover:border-gray-700 transition duration-300 flex flex-col">
-                <img src="modelo-retorno.jpg" alt="Modelo Retorno" class="w-full aspect-[4/3] object-cover border-b border-gray-800 rounded-t-xl">
-                <div class="p-6 text-center flex-1 flex flex-col justify-between items-center">
-                    <div class="mb-5">
-                        <h3 class="text-xl font-bold text-white mb-2">MODELO RETORNO</h3>
-                        <p class="text-sm text-gray-400">Formato curvo icónico de escenario.</p>
-                    </div>
-                    <!-- Botón "Lo quiero!" con Pixel Event -->
-                    <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_self" class="w-40 bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs tracking-wider py-2.5 rounded-lg transition duration-200 text-center">
-                        Lo quiero!
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. SECCIÓN: POTENCIA, CALIDAD Y ESPECIFICACIONES -->
-    <section class="container mx-auto px-4 py-16 border-t border-gray-900">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            <!-- Columna Izquierda: Presentación y Accesorios Incluidos -->
-            <div class="space-y-6">
-                <span class="text-amber-500 font-semibold text-xs tracking-widest uppercase">Diseño Ultra Compacto</span>
-                
-                <!-- Título agrandado con fuente Lobster -->
-                <h2 class="text-4xl md:text-5xl font-lobster text-white tracking-wide leading-tight">
-                    Sorprendente potencia y definición en la palma de tu mano
-                </h2>
-                
-                <p class="text-gray-400 text-base leading-relaxed">
-                    No te dejes engañar por su tamaño en miniatura. El parlante Beskell está diseñado para brindar una <strong class="text-gray-200">excelente calidad de sonido y una potencia única para sus dimensiones</strong>. Además, cuenta con un sistema nativo pasivo de fragancia a madera que ambienta tu espacio de trabajo mientras escuchás tu música favorita.
-                </p>
-
-                <!-- Lo que incluye la caja -->
-                <div class="bg-[#1a1a1a] border border-gray-800 rounded-xl p-6 mt-6">
-                    <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
-                        <svg class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                        </svg>
-                        ¿Qué incluye la caja?
-                    </h3>
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-300">
-                        <li class="flex items-center gap-2">
-                            <span class="text-amber-500">✓</span> Funda / Bolsa de cuerina
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-amber-500">✓</span> Cable de carga USB Tipo C (Blanco)
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-amber-500">✓</span> Cordón para muñeca o transporte
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-amber-500">✓</span> Manual de usuario impreso
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Botón de descarga de Manual -->
-                <div class="pt-2">
-                    <a href="manual.pdf" download class="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-semibold text-xs uppercase tracking-wider py-3 px-5 rounded-lg transition duration-200 border border-gray-700">
-                        <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </svg>
-                        Descargar Manual PDF
-                    </a>
-                </div>
-            </div>
-
-            <!-- Columna Derecha: Especificaciones Técnicas -->
-            <div class="bg-[#181818] border border-gray-800 rounded-xl p-8 relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-500/5 rounded-full blur-2xl pointer-events-none"></div>
-                
-                <h3 class="text-xl font-bold text-white mb-6 pb-3 border-b border-gray-800 flex items-center justify-between">
-                    Ficha Técnica
-                    <span class="text-xs font-normal text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-full">MiniTooth V5.3</span>
-                </h3>
-
-                <div class="space-y-4 text-sm">
-                    <div class="flex justify-between py-2 border-b border-gray-800/50">
-                        <span class="text-gray-400">Dimensiones</span>
-                        <span class="text-white font-medium">4,2 x 4,2 x 4,2 cm</span>
-                    </div>
-                    <div class="flex justify-between py-2 border-b border-gray-800/50">
-                        <span class="text-gray-400">Peso</span>
-                        <span class="text-white font-medium">56 g</span>
-                    </div>
-                    <div class="flex justify-between py-2 border-b border-gray-800/50">
-                        <span class="text-gray-400">Potencia Nominal</span>
-                        <span class="text-white font-medium">2W</span>
-                    </div>
-                    <div class="flex justify-between py-2 border-b border-gray-800/50">
-                        <span class="text-gray-400">Conectividad</span>
-                        <span class="text-white font-medium">Bluetooth V5.3</span>
-                    </div>
-                    <div class="flex justify-between py-2 border-b border-gray-800/50">
-                        <span class="text-gray-400">Relación Señal/Ruido (S/N)</span>
-                        <span class="text-white font-medium">≥ 90 dB</span>
-                    </div>
-                    <div class="flex justify-between py-2 border-b border-gray-800/50">
-                        <span class="text-gray-400">Distorsión Armónica (THD)</span>
-                        <span class="text-white font-medium">&lt; 1%</span>
-                    </div>
-                    <div class="flex justify-between py-2 border-b border-gray-800/50">
-                        <span class="text-gray-400">Batería</span>
-                        <span class="text-white font-medium text-right">
-                            3.7V / 200 mAh <br>
-                            <span class="text-xs text-amber-500 font-normal">(Entre 3 y 4 horas de reproducción continua)</span>
-                        </span>
-                    </div>
-                    <div class="flex justify-between py-2">
-                        <span class="text-gray-400">Funciones Extra</span>
-                        <span class="text-white font-medium">Obturador remoto de cámara</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 5. SECCIÓN: COMPRÁ CON TOTAL CONFIANZA Y SEGURIDAD -->
-    <section class="container mx-auto px-4 py-16 border-t border-gray-900">
-        <div class="text-center mb-12">
-            <span class="text-amber-500 font-semibold text-xs tracking-widest uppercase block mb-2">Garantía y Protección</span>
-            <h2 class="text-4xl md:text-5xl font-lobster text-white mb-4 tracking-wide">Comprá con Total Confianza</h2>
-            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-                Procesamos tus compras a través de las plataformas líderes del mercado. Tus datos personales y de pago están resguardados con cifrado SSL de máxima seguridad.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <!-- Opción Tiendanube -->
-            <div class="bg-[#1a1a1a] border border-gray-800 rounded-2xl p-8 hover:border-blue-500/50 transition duration-300 flex flex-col justify-between items-center text-center">
-                <div class="w-full flex flex-col items-center">
-                    <div class="mb-6 w-full flex items-center justify-center h-16">
-                        <img src="tiendanube.jpg" alt="Tiendanube" class="max-h-12 w-auto object-contain rounded-lg">
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Nuestra Tienda Oficial</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                        Comprá directamente desde nuestro e-commerce oficial con tecnología Tiendanube. Aceptamos tarjetas de crédito, débito y transferencia bancaria con el respaldo y protección de la plataforma de comercio electrónico líder de Latinoamérica.
-                    </p>
-                </div>
-                <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs tracking-wider py-3.5 px-8 rounded-xl transition duration-200">
-                    Ir a la Tienda Oficial
-                </a>
-            </div>
-
-            <!-- Opción Mercado Libre -->
-            <div class="bg-[#1a1a1a] border border-gray-800 rounded-2xl p-8 hover:border-yellow-500/50 transition duration-300 flex flex-col justify-between items-center text-center">
-                <div class="w-full flex flex-col items-center">
-                    <div class="mb-6 w-full flex items-center justify-center h-16">
-                        <img src="mercadolibre.jpg" alt="Mercado Libre" class="max-h-12 w-auto object-contain rounded-lg">
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Comprá en Mercado Libre</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                        ¿Preferís la plataforma de siempre? Adquirí tu parlante Beskell con <strong class="text-gray-200">Envío Gratis a todo el país</strong> a través de nuestra publicación oficial en Mercado Libre y disfrutá de la garantía total de <strong class="text-gray-200">Compra Protegida</strong>.
-                    </p>
-                </div>
-                <a href="https://www.mercadolibre.com.ar/parlante-bluetooth-miniatura-beskell-personalizable/up/MLAU4396082202" target="_blank" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs tracking-wider py-3.5 px-8 rounded-xl transition duration-200">
-                    Ver en Mercado Libre
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. SECCIÓN: REGALOS EMPRESARIALES Y SOUVENIRS -->
-    <section class="container mx-auto px-4 py-16 border-t border-gray-900">
-        <div class="bg-gradient-to-br from-[#1c1c1c] via-[#161616] to-[#0f0f0f] border border-amber-500/30 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden text-center">
-            
-            <!-- Resplandor decorativo de fondo -->
-            <div class="absolute -top-24 -right-24 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="max-w-3xl mx-auto space-y-6 relative z-10">
-                <!-- Badge superior -->
-                <span class="inline-block bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs px-4 py-1.5 rounded-full font-semibold uppercase tracking-widest">
-                    Ventas Mayoristas & Regalos Únicos
-                </span>
-
-                <!-- Título principal en Blanco -->
-                <h2 class="text-3xl md:text-5xl font-lobster text-white tracking-wide leading-tight">
-                    Regalos Empresariales y Souvenirs
-                </h2>
-
-                <!-- Texto unificado -->
-                <p class="text-gray-300 text-base md:text-lg leading-relaxed">
-                    Generá el impacto de regalar algo verdaderamente único. Un detalle inolvidable, diseñado para sorprender a <strong class="text-white">amigos, invitados, amantes de la música, coleccionistas y apasionados del rock</strong>.
-                </p>
-
-                <!-- Destacado de Descuento por Cantidad -->
-                <div class="bg-black/50 border border-amber-500/20 rounded-xl p-5 my-4 inline-block">
-                    <p class="text-sm md:text-base text-amber-400 font-semibold flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                        ¡Aprovechá nuestros precios especiales y descuentos por cantidad!
-                    </p>
-                </div>
-
-                <p class="text-gray-400 text-sm">
-                    Ideal para eventos, fidelización de clientes o regalística corporativa de categoría. Consultanos por presupuestos a medida.
-                </p>
-
-                <!-- Botón de Contacto Directo a WhatsApp -->
-                <div class="pt-4">
-                    <a href="https://wa.me/541154990258?text=Hola!%20Quisiera%20consultar%20por%20descuentos%20por%20cantidad%20para%20regalos%20empresariales%2Fsouvenirs" target="_blank" class="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-black font-bold uppercase text-xs sm:text-sm tracking-wider py-3.5 px-8 rounded-xl transition duration-200 shadow-lg shadow-amber-500/10">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                        </svg>
-                        Consultar por cantidad
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. SECCIÓN: SEGUINOS EN INSTAGRAM + QR -->
-    <section class="container mx-auto px-4 py-16 border-t border-gray-900">
-        <div class="bg-[#181818] border border-gray-800 rounded-2xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 max-w-4xl mx-auto text-center md:text-left">
-            
-            <div class="space-y-4 max-w-md">
-                <span class="text-xs font-semibold text-pink-500 uppercase tracking-widest block">Comunidad Beskell</span>
-                <h2 class="text-3xl md:text-4xl font-lobster text-white tracking-wide">
-                    Seguinos en Instagram
-                </h2>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Enterate de los nuevos lanzamientos, mirá las fotos de nuestros clientes y conocé todas las novedades de <strong class="text-gray-200">@beskell.mini</strong>.
-                </p>
-                <div class="pt-2">
-                    <a href="https://www.instagram.com/beskell.mini" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:opacity-90 text-white font-bold uppercase text-xs sm:text-sm tracking-wider py-3.5 px-6 rounded-xl transition duration-200 shadow-lg">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                        Seguinos @beskell.mini
-                    </a>
-                </div>
-            </div>
-
-            <!-- Imagen del Código QR -->
-            <div class="bg-[#121212] p-3 rounded-2xl border border-gray-800 shadow-xl shrink-0">
-                <img src="qr-instagram.png" alt="QR Instagram @beskell.mini" class="w-44 h-44 object-contain rounded-xl" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.instagram.com/beskell.mini';">
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 8. PIE DE PÁGINA -->
-    <footer class="bg-black border-t border-gray-900 py-12">
-        <div class="container mx-auto px-4 flex flex-col items-center text-center space-y-4">
-            
-            <div class="flex items-center gap-4">
-                <!-- Monograma B -->
-                <img src="B logo.jpg" alt="B Logo" class="h-14 w-14 object-contain rounded-lg">
-                <!-- Enlace rápido Instagram -->
-                <a href="https://www.instagram.com/beskell.mini" target="_blank" class="p-3 bg-[#1a1a1a] border border-gray-800 rounded-lg text-gray-400 hover:text-white hover:border-pink-500/50 transition">
-                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <p class="text-sm text-gray-500">
-                &copy; 2026 Beskell - Parlantes Bluetooth miniatura con estética de amplificador y fragancia a madera.
-            </p>
-        </div>
-    </footer>
-
-    <!-- 9. BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/541154990258" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 rounded-full shadow-2xl z-50 flex items-center justify-center transition-transform hover:scale-110 duration-200" aria-label="Contacto por WhatsApp">
-        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
+<!-- ============================================================
+     HEADER (Sin "Configurador" en la barra superior)
+     ============================================================ -->
+<header class="site-header sticky top-0 z-50 border-b border-white/10 text-white">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    
+    <a href="index.html" class="flex items-center shrink-0">
+      <img src="Beskell.png" alt="Beskell" class="h-10 sm:h-12 object-contain rounded-md">
     </a>
 
-    <!-- Swiper JS Script -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mainSlider", {
-            loop: true,
-            effect: "fade",
-            fadeEffect: { crossFade: true },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            on: {
-                init: function () {
-                    gestionarVideoYSlide(this);
-                },
-                slideChange: function () {
-                    gestionarVideoYSlide(this);
-                }
-            }
-        });
+    <!-- Navegación Escritorio -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-white/85">
+      <a href="#modelos" class="hover:text-gold transition">Modelos</a>
+      <a href="#personalizacion" class="hover:text-gold transition">Personalización</a>
+      <a href="#ficha" class="hover:text-gold transition">Ficha técnica</a>
+      <a href="#mayoristas" class="hover:text-gold transition">Mayoristas</a>
+      <a href="#faq" class="hover:text-gold transition">FAQs</a>
+    </nav>
 
-        function gestionarVideoYSlide(swiperInstance) {
-            const video = document.getElementById('videoSlide1');
-            if (!video) return;
+    <div class="flex items-center gap-2">
+      <!-- "Comprar" se abre en nueva ventana -->
+      <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener"
+         class="btn-gold hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold">
+        Comprar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg border border-white/20 text-white" aria-label="Abrir menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
 
-            // Swiper con loop usa realIndex (0 es el Slide 1 del video)
-            if (swiperInstance.realIndex === 0) {
-                // Detiene el temporizador automático de Swiper mientras corre el video
-                swiperInstance.autoplay.stop();
-                video.currentTime = 0;
-                
-                // Intenta reproducir el video
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        // Si el navegador bloquea la reproducción automática, pasa al siguiente slide a los 5s
-                        swiperInstance.autoplay.start();
-                    });
-                }
+  <!-- Menú Móvil -->
+  <div id="mobileMenu" class="hidden md:hidden border-t border-white/10" style="background-color: rgba(38,38,42,0.98);">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3 text-white/90">
+      <a href="#modelos" class="py-1">Modelos</a>
+      <a href="#personalizacion" class="py-1">Personalización</a>
+      <a href="#ficha" class="py-1">Ficha técnica</a>
+      <a href="#mayoristas" class="py-1">Mayoristas</a>
+      <a href="#faq" class="py-1">FAQs</a>
+      <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener" class="btn-gold inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold w-fit">Comprar</a>
+    </nav>
+  </div>
+</header>
 
-                // Evento cuando el video TERMINA su reproducción completa
-                video.onended = function() {
-                    swiperInstance.slideNext(); // Pasa inmediatamente al Slide 2 (1.jpg)
-                    swiperInstance.autoplay.start(); // Reanuda el temporizador para los demás slides
-                };
-            } else {
-                // Si está en las imágenes (slides 2, 3, 4, 5), el autoplay funciona normal cada 5s
-                swiperInstance.autoplay.start();
-            }
-        }
-    </script>
+<!-- ============================================================
+     1. HERO
+     ============================================================ -->
+<section id="top" class="paper relative overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-ink/[0.04] blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 md:pt-10 md:pb-16 grid md:grid-cols-2 md:gap-x-14 gap-y-6 md:items-start relative">
+    <div class="reveal order-1 md:col-start-1 md:row-start-1">
+      <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-goldDark font-semibold font-sans">
+        <span class="w-6 h-px bg-goldDark"></span> Diseñado en Argentina
+      </span>
+      <h1 class="mt-3 text-4xl sm:text-5xl md:text-6xl leading-[1.1] text-ink font-lobster">
+        Un amplificador<br/>
+        <span class="text-goldDark">en la palma de tu mano.</span>
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-ink/80 max-w-xl">
+        Mini parlante Bluetooth con estética de amplificador clásico. Elegí el modelo, combiná los colores y sumá tu logo o el texto que quieras.
+      </p>
+      <p class="mt-2 text-base sm:text-lg text-ink/80 max-w-xl">
+        Cada Beskell se personaliza y se arma especialmente para vos, con tiempo y atención al detalle.
+      </p>
+    </div>
+
+    <div class="reveal order-2 md:col-start-2 md:row-start-1 md:row-span-2">
+      <div class="relative">
+        <img src="beskell_inicio.jpg" alt="Mini parlante Beskell modelo Ampli"
+             class="w-full h-auto max-h-[380px] md:max-h-[440px] object-cover rounded-2xl shadow-soft ring-1 ring-ink/10" />
+
+        <div class="hidden md:block absolute -bottom-4 -left-4 sm:-left-6 bg-ink text-white rounded-2xl px-4 py-3 shadow-dark">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gold/25 flex items-center justify-center text-gold">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13V4h9a7 7 0 0 1 7 7v9h-9z"/><path d="M4 4l16 16"/></svg>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-gold font-semibold font-sans">Un detalle secreto</p>
+              <p class="text-sm font-semibold">Fragancia a madera.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal order-3 md:col-start-1 md:row-start-2">
+      <div class="flex flex-wrap gap-3">
+        <a href="#modelos" class="btn-gold inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold">
+          Ver modelos
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://wa.me/541154990258?text=Hola!%20Quisiera%20consultar%20por%20un%20Beskell" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold border border-ink text-ink hover:bg-ink hover:text-white transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Consultar por WhatsApp
+        </a>
+      </div>
+
+      <div class="mt-6 flex flex-col md:flex-row md:flex-wrap md:items-center gap-y-2 md:gap-x-5 text-sm text-ink/85 font-sans">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-goldDark"></span>
+          <span>Desde <strong class="text-ink">$40.000</strong></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-goldDark"></span>
+          <span>Envíos a todo el país</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-goldDark"></span>
+          <span><strong class="text-ink">10% OFF</strong> por transferencia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     2. MODELOS
+     ============================================================ -->
+<section id="modelos" class="bg-ink text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-30 pointer-events-none"
+       style="background-image: radial-gradient(circle at 15% 20%, rgba(201,169,97,0.14), transparent 45%), radial-gradient(circle at 85% 80%, rgba(201,169,97,0.08), transparent 45%);"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 relative">
+    <div class="reveal">
+      <div class="max-w-2xl">
+        <span class="text-xs uppercase tracking-widest text-gold font-semibold font-sans">Modelos</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-lobster">Elegí tu Beskell</h2>
+        <p class="mt-3 text-white/80">Tres formatos con personalidad propia: Ampli, Caja y Retorno.</p>
+      </div>
+      <p class="mt-1 text-white/80 md:whitespace-nowrap">La misma tecnología Bluetooth, tres diseños diferentes para elegir el que más va con vos.</p>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- AMPLI -->
+      <article class="card-lift bg-white rounded-2xl overflow-hidden shadow-softer text-ink">
+        <div class="relative aspect-[4/5] bg-beige">
+          <img src="https://beskell.com.ar/modelo-ampli.jpg" alt="Beskell modelo Ampli" class="w-full h-full object-cover" />
+          <span class="card-tag absolute top-3 left-3 text-[10px] font-semibold uppercase px-2.5 py-1 rounded-full font-sans">Personalizable</span>
+        </div>
+        <div class="p-5">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="text-2xl text-ink font-lobster">Ampli</h3>
+            <span class="text-sm text-ink/70 font-sans">Desde <strong class="text-ink">$40.000</strong></span>
+          </div>
+          <p class="mt-2 text-sm text-ink/80 font-sans">La estética inconfundible de un amplificador clásico, con panel, esquinas y perillas. El modelo que todos reconocen.</p>
+          <div class="mt-4 flex items-center gap-2 flex-wrap font-sans">
+            <span class="text-xs text-ink/60 mr-1">Paleta:</span>
+            <span class="swatch" style="background:#26262A" title="Negro"></span>
+            <span class="swatch swatch-white" style="background:#FFFFFF" title="Blanco"></span>
+            <span class="swatch" style="background:#6E6E6E" title="Gris"></span>
+            <span class="swatch" style="background:#C9A961" title="Dorado"></span>
+          </div>
+          <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener"
+             class="mt-5 inline-flex items-center justify-center gap-2 w-full btn-gold px-4 py-2.5 rounded-full text-sm font-semibold font-sans">
+            Comprar y personalizar
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- CAJA -->
+      <article class="card-lift bg-white rounded-2xl overflow-hidden shadow-softer text-ink">
+        <div class="relative aspect-[4/5] bg-beige">
+          <img src="https://beskell.com.ar/modelo-caja.jpg" alt="Beskell modelo Caja" class="w-full h-full object-cover" />
+          <span class="card-tag absolute top-3 left-3 text-[10px] font-semibold uppercase px-2.5 py-1 rounded-full font-sans">Personalizable</span>
+        </div>
+        <div class="p-5">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="text-2xl text-ink font-lobster">Caja</h3>
+            <span class="text-sm text-ink/70 font-sans">Desde <strong class="text-ink">$40.000</strong></span>
+          </div>
+          <p class="mt-2 text-sm text-ink/80 font-sans">Líneas rectas, formato compacto y una estética inspirada en los clásicos del rock. Ideal para sumar música y personalidad a cualquier espacio.</p>
+          <div class="mt-4 flex items-center gap-2 flex-wrap font-sans">
+            <span class="text-xs text-ink/60 mr-1">Paleta:</span>
+            <span class="swatch" style="background:#26262A" title="Negro"></span>
+            <span class="swatch swatch-white" style="background:#FFFFFF" title="Blanco"></span>
+            <span class="swatch" style="background:#6E6E6E" title="Gris"></span>
+            <span class="swatch" style="background:#C9A961" title="Dorado"></span>
+          </div>
+          <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener"
+             class="mt-5 inline-flex items-center justify-center gap-2 w-full btn-gold px-4 py-2.5 rounded-full text-sm font-semibold font-sans">
+            Comprar y personalizar
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- RETORNO -->
+      <article class="card-lift bg-white rounded-2xl overflow-hidden shadow-softer text-ink">
+        <div class="relative aspect-[4/5] bg-beige">
+          <img src="https://beskell.com.ar/modelo-retorno.jpg" alt="Beskell modelo Retorno" class="w-full h-full object-cover" />
+          <span class="card-tag absolute top-3 left-3 text-[10px] font-semibold uppercase px-2.5 py-1 rounded-full font-sans">Personalizable</span>
+        </div>
+        <div class="p-5">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="text-2xl text-ink font-lobster">Retorno</h3>
+            <span class="text-sm text-ink/70 font-sans">Desde <strong class="text-ink">$40.000</strong></span>
+          </div>
+          <p class="mt-2 text-sm text-ink/80 font-sans">Un formato curvo inspirado en los monitores de escenario. Bajo perfil, diseño original y mucha presencia.</p>
+          <div class="mt-4 flex items-center gap-2 flex-wrap font-sans">
+            <span class="text-xs text-ink/60 mr-1">Paleta:</span>
+            <span class="swatch" style="background:#26262A" title="Negro"></span>
+            <span class="swatch swatch-white" style="background:#FFFFFF" title="Blanco"></span>
+            <span class="swatch" style="background:#6E6E6E" title="Gris"></span>
+            <span class="swatch" style="background:#C9A961" title="Dorado"></span>
+          </div>
+          <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener"
+             class="mt-5 inline-flex items-center justify-center gap-2 w-full btn-gold px-4 py-2.5 rounded-full text-sm font-semibold font-sans">
+            Comprar y personalizar
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. PERSONALIZACION (SECCIÓN INTERNA)
+     ============================================================ -->
+<section id="personalizacion" class="bg-beige">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div class="reveal">
+        <span class="text-xs uppercase tracking-widest text-goldDark font-semibold font-sans">Personalización</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl text-ink font-lobster">Diseñalo a tu manera</h2>
+        <p class="mt-3 text-ink/80 max-w-lg">
+          Elegí cada detalle y creá una combinación completamente tuya. Podés personalizar colores, terminaciones y sumar tu propio logo o el texto que quieras.
+        </p>
+        <p class="mt-2 text-ink/80 max-w-lg">
+          No hay dos Beskell iguales.
+        </p>
+
+        <div class="mt-8 font-sans">
+          <p class="text-xs uppercase tracking-widest text-goldDark font-semibold mb-3">Partes personalizables</p>
+
+          <div class="space-y-3">
+            <div class="bg-white rounded-xl px-4 py-3 ring-1 ring-sand">
+              <div class="flex items-center justify-between flex-wrap gap-3">
+                <span class="text-sm font-semibold text-ink">Rejilla</span>
+                <div class="flex items-center gap-2">
+                  <span class="swatch" style="background:#26262A" title="Negra"></span>
+                  <span class="swatch" style="background:#6E6E6E" title="Gris"></span>
+                  <span class="swatch" style="background:#C9A961" title="Dorada"></span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 ring-1 ring-sand">
+              <div class="flex items-center justify-between flex-wrap gap-3">
+                <span class="text-sm font-semibold text-ink">Filete</span>
+                <div class="flex items-center gap-2">
+                  <span class="swatch swatch-white" style="background:#FFFFFF" title="Blanco"></span>
+                  <span class="swatch" style="background:#26262A" title="Negro"></span>
+                  <span class="swatch" style="background:#C9A961" title="Dorado"></span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 ring-1 ring-sand">
+              <div class="flex items-center justify-between flex-wrap gap-3">
+                <span class="text-sm font-semibold text-ink">Panel <span class="text-xs font-normal text-ink/60">- solo en el modelo Ampli -</span></span>
+                <div class="flex items-center gap-2">
+                  <span class="swatch" style="background:#6E6E6E" title="Gris"></span>
+                  <span class="swatch" style="background:#26262A" title="Negro"></span>
+                  <span class="swatch" style="background:#C9A961" title="Dorado"></span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 ring-1 ring-sand">
+              <div class="flex items-center justify-between flex-wrap gap-3">
+                <span class="text-sm font-semibold text-ink">Esquinas <span class="text-xs font-normal text-ink/60">- solo en el modelo Ampli -</span></span>
+                <div class="flex items-center gap-2">
+                  <span class="swatch" style="background:#26262A" title="Negro"></span>
+                  <span class="swatch" style="background:#C9A961" title="Dorado"></span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 ring-1 ring-sand">
+              <div class="flex items-center justify-between flex-wrap gap-3">
+                <span class="text-sm font-semibold text-ink">Logo o texto</span>
+                <div class="flex items-center gap-2">
+                  <span class="swatch swatch-white" style="background:#FFFFFF" title="Blanco"></span>
+                  <span class="swatch" style="background:#C9A961" title="Dorado"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navega en la misma ventana -->
+          <div class="mt-6">
+            <a href="personalizacion.html" 
+               class="btn-gold inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold w-full sm:w-auto justify-center">
+              Formulario de Personalización
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 ring-1 ring-sand shadow-softer">
+          <p class="text-xs uppercase tracking-widest text-goldDark font-semibold font-sans">Cómo funciona</p>
+          <h3 class="mt-1 text-2xl text-ink font-lobster">Del carrito a tu escritorio</h3>
+
+          <ol class="mt-6 space-y-5 font-sans">
+            <li class="flex gap-4">
+              <span class="shrink-0 w-8 h-8 rounded-full bg-gold/20 text-goldDark font-semibold flex items-center justify-center">1</span>
+              <div>
+                <p class="font-semibold text-ink">Elegís tu modelo</p>
+                <p class="text-sm text-ink/80">Seleccionás Ampli, Caja o Retorno y realizás la compra desde nuestra tienda online.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="shrink-0 w-8 h-8 rounded-full bg-gold/20 text-goldDark font-semibold flex items-center justify-center">2</span>
+              <div>
+                <p class="font-semibold text-ink">Completás el formulario de personalización</p>
+                <p class="text-sm text-ink/80">Antes o después de comprar, podés acceder al formulario desde esta página y guardar tu combinación elegida.</p>
+                <p class="mt-1 text-sm text-ink/80">Al completar el formulario, ingresás los datos de tu compra para que podamos asociar la personalización a tu pedido.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="shrink-0 w-8 h-8 rounded-full bg-gold/20 text-goldDark font-semibold flex items-center justify-center">3</span>
+              <div>
+                <p class="font-semibold text-ink">Elegís colores y detalles</p>
+                <p class="text-sm text-ink/80">Seleccionás la combinación para la rejilla, el filete, el panel, las esquinas y los demás detalles disponibles según el modelo.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="shrink-0 w-8 h-8 rounded-full bg-gold/20 text-goldDark font-semibold flex items-center justify-center">4</span>
+              <div>
+                <p class="font-semibold text-ink">Sumás tu logo o texto</p>
+                <p class="text-sm text-ink/80">Podés enviarnos tu propio logo o elegir el texto que quieras colocar en el frente.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="shrink-0 w-8 h-8 rounded-full bg-gold/20 text-goldDark font-semibold flex items-center justify-center">5</span>
+              <div>
+                <p class="font-semibold text-ink">Lo armamos, lo probamos y lo despachamos</p>
+                <p class="text-sm text-ink/80">Cada Beskell se ensambla y se prueba de manera individual antes de salir en camino hacia vos.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. CONFIGURADOR
+     ============================================================ -->
+<section id="configurador" class="bg-ink text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-30 pointer-events-none"
+       style="background-image: radial-gradient(circle at 25% 30%, rgba(201,169,97,0.16), transparent 45%), radial-gradient(circle at 75% 70%, rgba(201,169,97,0.08), transparent 45%);"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center relative">
+    <div class="reveal">
+      <span class="text-xs uppercase tracking-widest text-gold font-semibold font-sans">Configurador</span>
+      <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-lobster">Probá combinaciones antes de comprar</h2>
+      <p class="mt-3 text-white/80 max-w-lg">
+        Usá nuestro configurador para crear tu Beskell ideal en tiempo real. Combiná colores, terminaciones y logo hasta encontrar el diseño que más te guste.
+      </p>
+      <p class="mt-2 text-white/80 max-w-lg">
+        Después, elegís el modelo en la tienda y nos enviás la combinación seleccionada a través del formulario de personalización.
+      </p>
+
+      <div class="mt-7 flex flex-wrap gap-3 font-sans">
+        <!-- Navega en la misma ventana -->
+        <a href="configurador.html"
+           class="btn-gold inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold">
+          Abrir configurador
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </a>
+        <!-- "Comprar" se abre en nueva ventana -->
+        <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold border border-white/40 text-white hover:bg-white hover:text-ink transition">
+          Ir directo a comprar
+        </a>
+      </div>
+
+      <p class="mt-6 text-xs text-white/60 italic max-w-md font-sans">
+        Probar el diseño es gratis y no implica ningún compromiso de compra.
+      </p>
+    </div>
+
+    <div class="reveal">
+      <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-dark">
+        <div class="relative aspect-[4/3] flex items-center justify-center overflow-hidden"
+             style="background: radial-gradient(circle at 50% 45%, #FAF7F2 0%, #E6DFD1 55%, #BFB49B 100%);">
+          <div class="absolute inset-0" style="background: radial-gradient(circle at 30% 22%, rgba(201,169,97,0.28), transparent 55%);"></div>
+          <img src="personal.jpg" alt="Vista previa configurador personal"
+               class="relative z-10 max-h-[85%] w-auto object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.35)]" />
+        </div>
+
+        <div class="glass-card p-4 grid grid-cols-5 gap-2 font-sans">
+          <div>
+            <p class="text-[9px] uppercase tracking-widest text-white/55 text-center">Rejilla</p>
+            <div class="mt-2 flex justify-center gap-1">
+              <span class="w-3.5 h-3.5 rounded-full ring-2 ring-gold" style="background:#26262A"></span>
+              <span class="w-3.5 h-3.5 rounded-full ring-1 ring-white/20" style="background:#6E6E6E"></span>
+              <span class="w-3.5 h-3.5 rounded-full ring-1 ring-white/20" style="background:#C9A961"></span>
+            </div>
+          </div>
+          <div>
+            <p class="text-[9px] uppercase tracking-widest text-white/55 text-center">Filete</p>
+            <div class="mt-2 flex justify-center gap-1">
+              <span class="w-3.5 h-3.5 rounded-full ring-1 ring-white/20 swatch-white" style="background:#FFFFFF"></span>
+              <span class="w-3.5 h-3.5 rounded-full ring-2 ring-gold" style="background:#C9A961"></span>
+              <span class="w-3.5 h-3.5 rounded-full ring-1 ring-white/20" style="background:#26262A"></span>
+            </div>
+          </div>
+          <div>
+            <p class="text-[9px] uppercase tracking-widest text-white/55 text-center">Panel</p>
+            <div class="mt-2 flex justify-center gap-1">
+              <span class="w-3.5 h-3.5 rounded-full ring-2 ring-gold" style="background:#6E6E6E"></span>
+              <span class="w-3.5 h-3.5 rounded-full ring-1 ring-white/20" style="background:#26262A"></span>
+              <span class="w-3.5 h-3.5 rounded-full ring-1 ring-white/20" style="background:#C9A961"></span>
+            </div>
+          </div>
+          <div>
+            <p class="text-[9px] uppercase tracking-widest text-white/55 text-center">Esquinas</p>
+            <div class="mt-2 flex justify-center gap-1">
+              <span class="w-3.5 h-3.5 rounded-full ring-1 ring-white/20" style="background:#26262A"></span>
+              <span class="w-3.5 h-3.5 rounded-full ring-2 ring-gold" style="background:#C9A961"></span>
+            </div>
+          </div>
+          <div>
+            <p class="text-[9px] uppercase tracking-widest text-white/55 text-center">Logo</p>
+            <div class="mt-2 flex justify-center gap-1">
+              <span class="w-3.5 h-3.5 rounded-full ring-2 ring-gold swatch-white" style="background:#FFFFFF"></span>
+              <span class="w-3.5 h-3.5 rounded-full ring-1 ring-white/20" style="background:#C9A961"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. DISEÑO Y FABRICACION
+     ============================================================ -->
+<section id="artesanal" class="bg-cream">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+    <div class="max-w-2xl reveal">
+      <span class="text-xs uppercase tracking-widest text-goldDark font-semibold font-sans">Diseño</span>
+      <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl text-ink font-lobster">Diseñado en Argentina</h2>
+      <p class="mt-3 text-ink/80">
+        Por dentro, un mini parlante Bluetooth <strong>MiniTooth V5.3</strong> con sonido cálido y claro. Por fuera, una carcasa creada especialmente para darle la estética del amplificador que elegís.
+      </p>
+      <p class="mt-2 text-ink/80">
+        Cada Beskell se diseña, se personaliza, se ensambla y se prueba uno por uno.
+      </p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6 reveal">
+      <div>
+        <div class="ref-frame aspect-[4/5]">
+          <img src="2cel.jpg" alt="Beskell - Tres formatos, tu propio estilo" loading="lazy" />
+        </div>
+        <p class="ref-caption">1. La inspiración: el amplificador clásico.</p>
+      </div>
+      <div class="md:mt-8">
+        <div class="ref-frame aspect-[4/5]">
+          <img src="3cel.jpg" alt="Beskell - Tu marca, tu estilo, tu parlante" loading="lazy" />
+        </div>
+        <p class="ref-caption">2. La base: mini parlante Bluetooth de calidad.</p>
+      </div>
+      <div>
+        <div class="ref-frame aspect-[4/5]">
+          <img src="4cel.jpg" alt="Beskell - Tu música, tu propio estilo" loading="lazy" />
+        </div>
+        <p class="ref-caption">3. El resultado: tu Beskell, personalizado.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-3 gap-6">
+      <div class="bg-beige rounded-2xl p-6 ring-1 ring-sand">
+        <p class="text-4xl text-ink font-lobster">1 × 1</p>
+        <p class="mt-1 text-sm text-ink/80 font-sans">Cada unidad se arma individualmente.</p>
+      </div>
+      <div class="bg-beige rounded-2xl p-6 ring-1 ring-sand">
+        <p class="text-4xl text-ink font-lobster">100%</p>
+        <p class="mt-1 text-sm text-ink/80 font-sans">Diseño y ensamblado en Argentina.</p>
+      </div>
+      <div class="bg-beige rounded-2xl p-6 ring-1 ring-sand">
+        <p class="text-4xl text-ink font-lobster">∞</p>
+        <p class="mt-1 text-sm text-ink/80 font-sans">Combinaciones de colores, detalles, textos y logos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. DEMOSTRACION
+     ============================================================ -->
+<section class="bg-ink text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <span class="text-xs uppercase tracking-widest text-gold font-semibold font-sans">Demostración</span>
+      <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-lobster">Pequeño en tamaño.<br/><span class="text-gold">Grande en presencia.</span></h2>
+      <p class="mt-3 text-white/80 max-w-lg">
+        Cabe en una mano, se conecta por Bluetooth en segundos y suma música y personalidad a cualquier espacio.
+      </p>
+      <p class="mt-2 text-white/80 max-w-lg">
+        Un objeto diseñado para verse tanto como para escucharse.
+      </p>
+
+      <ul class="mt-7 grid grid-cols-2 gap-y-3 gap-x-6 text-sm font-sans">
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Bluetooth V5.3</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Portátil</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Recargable</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Sonido claro y presente</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Diseño personalizado</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Fabricación artesanal</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>Fragancia a madera</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span>El regalo perfecto</li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <video controls playsinline preload="metadata"
+             class="w-full aspect-video rounded-2xl ring-1 ring-gold/40 shadow-dark bg-black object-cover"
+             poster="beskell_video_init.jpg">
+        <source src="beskell_video.mp4" type="video/mp4" />
+        Tu navegador no soporta video.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7. FICHA TECNICA
+     ============================================================ -->
+<section id="ficha" class="paper">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+    <div class="max-w-2xl reveal">
+      <span class="text-xs uppercase tracking-widest text-goldDark font-semibold font-sans">Ficha técnica</span>
+      <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl text-ink font-lobster">MiniTooth V5.3</h2>
+      <p class="mt-3 text-ink/80">Estas son las especificaciones del parlante Bluetooth que se encuentra dentro de todos los modelos Beskell.</p>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal font-sans">
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand">
+        <p class="text-[11px] uppercase tracking-widest text-goldDark">Conectividad</p>
+        <p class="mt-1 text-ink font-semibold">Bluetooth V5.3</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand">
+        <p class="text-[11px] uppercase tracking-widest text-goldDark">Batería</p>
+        <p class="mt-1 text-ink font-semibold">3.7 V / 200 mAh</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand">
+        <p class="text-[11px] uppercase tracking-widest text-goldDark">Reproducción</p>
+        <p class="mt-1 text-ink font-semibold">Entre 3 y 4 horas de uso continuo</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand">
+        <p class="text-[11px] uppercase tracking-widest text-goldDark">Potencia nominal</p>
+        <p class="mt-1 text-ink font-semibold">3 W</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand">
+        <p class="text-[11px] uppercase tracking-widest text-goldDark">Relación señal / ruido</p>
+        <p class="mt-1 text-ink font-semibold">≥ 90 dB</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand">
+        <p class="text-[11px] uppercase tracking-widest text-goldDark">Distorsión armónica</p>
+        <p class="mt-1 text-ink font-semibold">&lt; 1%</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand">
+        <p class="text-[11px] uppercase tracking-widest text-goldDark">Dimensiones</p>
+        <p class="mt-1 text-ink font-semibold">4,2 × 4,2 × 4,2 cm</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand">
+        <p class="text-[11px] uppercase tracking-widest text-goldDark">Peso</p>
+        <p class="mt-1 text-ink font-semibold">56 g</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand">
+        <p class="text-[11px] uppercase tracking-widest text-goldDark">Funda incluida</p>
+        <p class="mt-1 text-ink font-semibold">Cuerina</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 ring-1 ring-sand sm:col-span-2 lg:col-span-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          <p class="text-[11px] uppercase tracking-widest text-goldDark">Detalle extra</p>
+          <p class="mt-1 text-ink font-semibold">Sistema pasivo de fragancia a madera</p>
+        </div>
+        <a href="manual.pdf" download class="inline-flex items-center gap-2 bg-ink hover:bg-black text-white text-xs font-semibold px-4 py-2 rounded-lg transition shrink-0 w-fit">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar Manual PDF
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     8. PACKAGING
+     ============================================================ -->
+<section class="bg-ink text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+    <div class="reveal order-2 md:order-1">
+      <div class="ref-frame aspect-[4/3]">
+        <img src="beskell_listo.jpg" alt="Beskell listo para regalar" loading="lazy" />
+      </div>
+      <p class="ref-caption text-white/60">Presentación oficial Beskell con accesorios.</p>
+    </div>
+    <div class="reveal order-1 md:order-2">
+      <span class="text-xs uppercase tracking-widest text-gold font-semibold font-sans">Packaging</span>
+      <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-lobster">Listo para regalar</h2>
+      <p class="mt-3 text-white/80 max-w-lg">
+        Cada Beskell se entrega con una presentación cuidada, pensada para que abrirlo también sea parte de la experiencia.
+      </p>
+
+      <p class="mt-6 text-xs uppercase tracking-widest text-gold font-semibold font-sans">Incluye</p>
+      <ul class="mt-3 grid sm:grid-cols-2 gap-3 font-sans">
+        <li class="flex items-center gap-3 glass-card rounded-xl px-4 py-3 ring-1 ring-white/10"><span class="w-2 h-2 rounded-full bg-gold"></span>Parlante Beskell</li>
+        <li class="flex items-center gap-3 glass-card rounded-xl px-4 py-3 ring-1 ring-white/10"><span class="w-2 h-2 rounded-full bg-gold"></span>Funda de cuerina</li>
+        <li class="flex items-center gap-3 glass-card rounded-xl px-4 py-3 ring-1 ring-white/10"><span class="w-2 h-2 rounded-full bg-gold"></span>Cable de carga USB Tipo C</li>
+        <li class="flex items-center gap-3 glass-card rounded-xl px-4 py-3 ring-1 ring-white/10"><span class="w-2 h-2 rounded-full bg-gold"></span>Cordón para muñeca / transporte</li>
+        <li class="flex items-center gap-3 glass-card rounded-xl px-4 py-3 ring-1 ring-white/10"><span class="w-2 h-2 rounded-full bg-gold"></span>Manual de usuario impreso</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     9. MAYORISTAS
+     ============================================================ -->
+<section id="mayoristas" class="bg-beige">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal">
+        <span class="text-xs uppercase tracking-widest text-goldDark font-semibold font-sans">Ventas mayoristas</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl text-ink font-lobster">Regalos empresariales<br/>y <span class="text-goldDark">souvenirs únicos</span></h2>
+        <p class="mt-3 text-ink/80 max-w-lg">
+          Creamos propuestas personalizadas para empresas, eventos, ferias, celebraciones y ediciones especiales.
+        </p>
+        <p class="mt-2 text-ink/80 max-w-lg">
+          Podemos adaptar los colores, el logo y los detalles de cada Beskell según tu marca o proyecto.
+        </p>
+        <p class="mt-2 text-ink/80 max-w-lg">
+          Los pedidos por cantidad se cotizan de manera individual, teniendo en cuenta el diseño, el volumen y los tiempos de producción.
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-3 font-sans">
+          <a href="https://wa.me/541154990258?text=Hola!%20Quisiera%20consultar%20por%20descuentos%20por%20cantidad%20para%20regalos%20empresariales%2Fsouvenirs" target="_blank" rel="noopener"
+             class="btn-gold inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="grid grid-cols-2 gap-3 font-sans">
+          <div class="bg-white rounded-xl p-4 ring-1 ring-sand">
+            <div class="w-10 h-10 rounded-full bg-gold/20 text-goldDark flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg>
+            </div>
+            <p class="mt-3 text-sm font-semibold text-ink">Regalos corporativos</p>
+            <p class="text-xs text-ink/70 mt-1">Para clientes, empleados, equipos y partners.</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 ring-1 ring-sand">
+            <div class="w-10 h-10 rounded-full bg-gold/20 text-goldDark flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+            <p class="mt-3 text-sm font-semibold text-ink">Eventos y ferias</p>
+            <p class="text-xs text-ink/70 mt-1">Souvenirs originales para sorprender a invitados y participantes.</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 ring-1 ring-sand">
+            <div class="w-10 h-10 rounded-full bg-gold/20 text-goldDark flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.8L20 8l-4 3.9.9 5.6L12 15l-4.9 2.5L8 11.9 4 8l5.6-1.2z"/></svg>
+            </div>
+            <p class="mt-3 text-sm font-semibold text-ink">Ediciones especiales</p>
+            <p class="text-xs text-ink/70 mt-1">Diseños personalizados con tu logo, colores o texto.</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 ring-1 ring-sand">
+            <div class="w-10 h-10 rounded-full bg-gold/20 text-goldDark flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3L8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+            </div>
+            <p class="mt-3 text-sm font-semibold text-ink">Descuentos por cantidad</p>
+            <p class="text-xs text-ink/70 mt-1">Precios especiales según el volumen y las características del pedido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     10. FAQ
+     ============================================================ -->
+<section id="faq" class="bg-ink text-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+    <div class="reveal">
+      <span class="text-xs uppercase tracking-widest text-gold font-semibold font-sans">Preguntas frecuentes</span>
+      <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-lobster">FAQs</h2>
+    </div>
+
+    <div class="mt-8 space-y-3 reveal font-sans">
+      <details class="group faq-card rounded-2xl ring-1 ring-white/25 p-5">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-white">¿Cómo elijo la personalización?</span>
+          <span class="faq-icon text-gold text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-sm text-white/80">
+          Una vez realizada tu compra, ingresá a nuestra sección <a href="personalizacion.html" class="text-gold font-semibold underline">PERSONALIZÁ TU PARLANTE</a>. Elegí las opciones deseadas para tu diseño y enviala indicando tu Nombre y Número de Pedido. Tené en cuenta que cuanto antes realices la personalización, antes te enviaremos el producto.
+        </p>
+      </details>
+
+      <details class="group faq-card rounded-2xl ring-1 ring-white/25 p-5">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-white">¿Qué pasa después de realizar el pedido?</span>
+          <span class="faq-icon text-gold text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-sm text-white/80">
+          Una vez realizada la compra y enviado el formulario de personalización, revisamos la combinación elegida y asociamos la personalización a tu pedido. Después comenzamos el armado.
+        </p>
+      </details>
+
+      <details class="group faq-card rounded-2xl ring-1 ring-white/25 p-5">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-white">¿Cuánto demora la fabricación?</span>
+          <span class="faq-icon text-gold text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-sm text-white/80">
+          Lleva aproximadamente 1 día hábil desde que se confirma el pedido y se completa la personalización.
+        </p>
+      </details>
+
+      <details class="group faq-card rounded-2xl ring-1 ring-white/25 p-5">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-white">¿Hacen envíos a todo el país?</span>
+          <span class="faq-icon text-gold text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-sm text-white/80">
+          Sí. Realizamos envíos a todo el país.
+        </p>
+      </details>
+
+      <details class="group faq-card rounded-2xl ring-1 ring-white/25 p-5">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-white">¿Cómo puedo pagar?</span>
+          <span class="faq-icon text-gold text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-sm text-white/80">
+          Podés pagar desde nuestra tienda online con los medios de pago disponibles, mediante transferencia bancaria con un 10% de descuento, o a través de Mercado Libre.
+        </p>
+      </details>
+
+      <details class="group faq-card rounded-2xl ring-1 ring-white/25 p-5">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-white">¿Puedo agregar mi propio logo o texto al frente del parlante?</span>
+          <span class="faq-icon text-gold text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-sm text-white/80">
+          Sí. Podés enviarnos tu logo o solicitar el texto que quieras colocar en el frente.
+        </p>
+      </details>
+
+      <details class="group faq-card rounded-2xl ring-1 ring-white/25 p-5">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-white">¿Qué incluye la compra?</span>
+          <span class="faq-icon text-gold text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-sm text-white/80">
+          Incluye el parlante Beskell personalizado, funda de cuerina, cable de carga USB Tipo C blanco, cordón para muñeca o transporte y manual impreso.
+        </p>
+      </details>
+
+      <details class="group faq-card rounded-2xl ring-1 ring-white/25 p-5">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-white">¿Puedo comprar por Mercado Libre?</span>
+          <span class="faq-icon text-gold text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-sm text-white/80">
+          Sí. También podés comprar a través de nuestra <a href="https://www.mercadolibre.com.ar/parlante-bluetooth-miniatura-beskell-personalizable/up/MLAU4396082202" target="_blank" rel="noopener" class="underline decoration-gold/60 hover:text-gold">publicación en Mercado Libre</a>.
+        </p>
+      </details>
+
+      <details class="group faq-card rounded-2xl ring-1 ring-white/25 p-5">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-semibold text-white">¿Hacen pedidos mayoristas o empresariales?</span>
+          <span class="faq-icon text-gold text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-sm text-white/80">
+          Sí. Realizamos pedidos por cantidad para empresas, eventos, souvenirs y ediciones especiales. Cada proyecto se evalúa según el volumen, la personalización y los tiempos de producción.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     11. CTA FINAL
+     ============================================================ -->
+<section class="paper">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center reveal">
+    <span class="text-xs uppercase tracking-widest text-goldDark font-semibold font-sans">Último paso</span>
+    <h2 class="mt-3 text-2xl sm:text-4xl md:text-5xl leading-tight text-ink font-lobster">
+      Elegí tu modelo,<br class="md:hidden" /> <span class="whitespace-nowrap md:whitespace-normal">personalizalo<br class="hidden md:block" /> y hacelo</span><br class="md:hidden" /> <span class="text-goldDark">completamente tuyo.</span>
+    </h2>
+    <p class="mt-4 text-ink/80 font-sans">Desde <strong class="text-ink">$40.000</strong> · <strong class="text-ink">10% OFF</strong> por transferencia</p>
+
+    <div class="mt-8 flex flex-wrap justify-center gap-3 font-sans">
+      <!-- "Comprar" se abre en nueva ventana -->
+      <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener"
+         class="btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold">
+        Comprar y personalizar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="https://wa.me/541154990258?text=Hola!%20Quisiera%20consultar%20por%20un%20Beskell" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-ink text-ink hover:bg-ink hover:text-white transition">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     12. FOOTER
+     ============================================================ -->
+<footer class="bg-ink text-white/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <img src="Beskell.png" alt="Beskell" class="h-10 w-auto object-contain rounded-md" />
+      <p class="mt-3 text-sm text-white/70 max-w-xs font-sans">
+        Mini parlantes Bluetooth con estética de amplificador, diseñados en Argentina.
+      </p>
+    </div>
+
+    <div class="font-sans">
+      <p class="text-xs uppercase tracking-widest text-gold font-semibold">Explorar</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a href="#modelos" class="hover:text-gold">Modelos</a></li>
+        <li><a href="#personalizacion" class="hover:text-gold">Personalización</a></li>
+        <li><a href="configurador.html" class="hover:text-gold">Configurador</a></li>
+        <li><a href="#ficha" class="hover:text-gold">Ficha técnica</a></li>
+        <li><a href="#mayoristas" class="hover:text-gold">Mayoristas</a></li>
+        <li><a href="#faq" class="hover:text-gold">FAQs</a></li>
+        <li><a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener" class="hover:text-gold">Comprar</a></li>
+      </ul>
+    </div>
+
+    <div class="font-sans">
+      <p class="text-xs uppercase tracking-widest text-gold font-semibold">Tienda online</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li>
+          <a href="https://beskell.mitiendanube.com/" onclick="fbq('track', 'InitiateCheckout');" target="_blank" rel="noopener" class="hover:text-gold font-medium">Tiendanube</a>
+        </li>
+        <li><span class="text-white/70">Envíos a todo el país</span></li>
+        <li><span class="text-white/70">10% OFF por transferencia</span></li>
+        <li>
+          <a href="https://www.mercadolibre.com.ar/parlante-bluetooth-miniatura-beskell-personalizable/up/MLAU4396082202" target="_blank" rel="noopener" class="hover:text-gold">Mercado Libre</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="font-sans">
+      <p class="text-xs uppercase tracking-widest text-gold font-semibold">Seguinos</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li>
+          <a href="https://www.instagram.com/beskell.mini" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://tiktok.com/@beskell.mini" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 6.6a5.9 5.9 0 0 1-3.5-1.2 5.9 5.9 0 0 1-2.3-3.9h-3.4v13.3a3 3 0 1 1-3-3 3 3 0 0 1 .8.1V8.4a6.4 6.4 0 0 0-.8-.1 6.4 6.4 0 1 0 6.4 6.4V9.2a9.3 9.3 0 0 0 5.8 2z"/></svg>
+            TikTok
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/541154990258" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 font-sans">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 text-xs text-center text-white/60">
+      <span>© <span id="year"></span> Beskell. Diseñado y ensamblado en Argentina.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
 </body>
 </html>
