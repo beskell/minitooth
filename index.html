@@ -489,7 +489,7 @@
 </section>
 
 <!-- ============================================================
-     4. CONFIGURADOR
+     4. CONFIGURADOR (Foto al 100% del cuadro)
      ============================================================ -->
 <section id="configurador" class="bg-ink text-white relative overflow-hidden">
   <div class="absolute inset-0 opacity-30 pointer-events-none"
@@ -525,13 +525,12 @@
       </p>
     </div>
 
+    <!-- Foto que llena el 100% del cuadro sin bordes vacíos -->
     <div class="reveal">
       <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-dark">
-        <div class="relative aspect-[4/3] flex items-center justify-center overflow-hidden"
-             style="background: radial-gradient(circle at 50% 45%, #FAF7F2 0%, #E6DFD1 55%, #BFB49B 100%);">
-          <div class="absolute inset-0" style="background: radial-gradient(circle at 30% 22%, rgba(201,169,97,0.28), transparent 55%);"></div>
+        <div class="relative aspect-[4/3] flex items-center justify-center overflow-hidden bg-beige">
           <img src="personal.jpg" alt="Vista previa configurador personal"
-               class="relative z-10 max-h-[85%] w-auto object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.35)]" />
+               class="w-full h-full object-cover rounded-t-2xl drop-shadow-[0_25px_45px_rgba(0,0,0,0.35)]" />
         </div>
 
         <div class="glass-card p-4 grid grid-cols-5 gap-2 font-sans">
